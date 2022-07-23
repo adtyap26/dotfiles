@@ -15,6 +15,7 @@ M.plugins = {
    override = {
       ["nvim-treesitter/nvim-treesitter"] = pluginConfs.treesitter,
       ["kyazdani42/nvim-tree.lua"] = pluginConfs.nvimtree,
+      ["NvChad/nvim-colorizer.lua"] = pluginConfs.colorizer,
       ["NvChad/ui"] = {
                         statusline = {
                         separator_style = "default",
