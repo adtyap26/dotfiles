@@ -7,7 +7,7 @@ M.ui = {
    hl_override = {},
    changed_themes = {},
    theme_toggle = { "onedark", "one_light" },
-   theme = 'chadracula', -- default theme
+   theme = "tokyonight", -- default theme
    transparency = false,
 }
 
@@ -16,14 +16,13 @@ M.plugins = {
       ["nvim-treesitter/nvim-treesitter"] = pluginConfs.treesitter,
       ["kyazdani42/nvim-tree.lua"] = pluginConfs.nvimtree,
       ["NvChad/nvim-colorizer.lua"] = pluginConfs.colorizer,
-      ["NvChad/ui"] = {
-                        statusline = {
-                        separator_style = "default",
-                        overriden_modules = function()
-                        return require "custom.plugins.sline"
-                        end,
-   },
-},
+      ["neovim/nvim-lspconfig"] = {
+            config = function()
+            require "plugins.configs.lspconfig"
+            require "custom.plugins.lspconfig"
+      end,
+      },
+      ["williamboman/mason.nvim"] = pluginConfs.mason,
    },
    user = {
       ["goolord/alpha-nvim"] = {
@@ -31,5 +30,4 @@ M.plugins = {
       },
    },
 }
-
 return M
