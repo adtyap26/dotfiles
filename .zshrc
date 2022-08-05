@@ -157,6 +157,9 @@ alias ll='exa -al --color=always --group-directories-first'  # long format
 alias lt='exa -aT --color=always --group-directories-first' # tree listing
 alias l.='exa -a | egrep "^\."'
 
+# Copy with recursive and remove with prompt
+alias cp ='cp -r'
+alias rm = 'rm -I'
 
 #fix obvious typo's
 alias cd..='cd ..'
@@ -478,6 +481,9 @@ colorscript -e bloks
 #sysinfo
 #sysinfo-retro
 #cpufetch
-#colorscript random
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
