@@ -157,9 +157,11 @@ alias ll='exa -al --color=always --group-directories-first'  # long format
 alias lt='exa -aT --color=always --group-directories-first' # tree listing
 alias l.='exa -a | egrep "^\."'
 
-# Copy with recursive and remove with prompt
-alias cp ='cp -r'
-alias rm = 'rm -I'
+# useful aliases for mv, cp, mkdir and rm
+alias mv='mv -iv'
+alias cp='cp -riv'
+alias mkdir='mkdir -vp'
+alias rm='rm -I'
 
 #fix obvious typo's
 alias cd..='cd ..'
@@ -464,8 +466,9 @@ alias personal='cp -Rf /personal/* ~'
 
 
 
-### RANDOM COLOR SCRIPT ###
-colorscript -e bloks 
+### RANDOM COLOR SCRIPT AND WEATHER ###
+#colorscript -e bloks
+curl -s "wttr.in/$1?M1q" | head -17
 
 # reporting tools - install when not installed
 #neofetch
