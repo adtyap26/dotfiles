@@ -4,13 +4,13 @@ temp() {
 	tempstat="$(sensors | grep -m 1 temp1 | awk '{print $2}')"
 	    if [[ $tempstat=40.0 ]] ; then
 	    temp=""
-	    elif [[ $tempstat>=40 ]] ; then
+	    elif [[ $tempstat > 40 ]] ; then
 	    temp=" "
-	    elif [[ $tempstat>=60 ]] ; then
+	    elif [[ $tempstat > 60 ]] ; then
 	    temp=" "
-	    elif [[ $tempstar>=80 ]] ; then
+	    elif [[ $tempstar > 80 ]] ; then
 	    temp=" "
-	    elif [[ $tempstat>=96 ]] ; then
+	    elif [[ $tempstat > 90 ]] ; then
 	    tempstat=" "
 	    fi
 
