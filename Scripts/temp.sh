@@ -2,7 +2,7 @@
 
 temp() {
 	tempstat="$(sensors | grep -m 1 temp1 | awk '{print $2}')"
-	    if [[ $tempstat=40.0 ]] ; then
+	    if [[ $tempstat = 40 ]] ; then
 	    temp=""
 	    elif [[ $tempstat > 40 ]] ; then
 	    temp=" "
