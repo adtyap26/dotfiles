@@ -14,5 +14,4 @@ temp() {
 
 	    echo "$tempstat $temp"
 }
-
 echo "$(temp)"
