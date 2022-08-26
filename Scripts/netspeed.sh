@@ -1,7 +1,7 @@
 #!/bin/bash
 
 interface="wlp1s0"
-icon=" "
+icon=" "
 
 while true
 do
@@ -14,5 +14,5 @@ do
         RBPS=`expr $R2 - $R1`
         TKBPS=`expr $TBPS / 1024`
         RKBPS=`expr $RBPS / 1024`
-        echo "$icon  :$TKBPS kB/s   :$RKBPS kB/s"
+        echo "$icon  :$RKBPS  :$TKBPS kB/s"
 done
