@@ -114,9 +114,6 @@ fi
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-
-
-
 ####   ARCOLINUX SETTINGS   ####
 export PAGER='most'
 
@@ -156,6 +153,14 @@ alias la='exa -a --color=always --group-directories-first'  # all files and dirs
 alias ll='exa -al --color=always --group-directories-first'  # long format
 alias lt='exa -aT --color=always --group-directories-first' # tree listing
 alias l.='exa -a | egrep "^\."'
+
+# GO to main project
+alias jav='cd /home/permaditya/Documents/Adit/Learning/COding/Javascript/'
+alias nod='cd /home/permaditya/Documents/Adit/Learning/COding/Javascript/nodejs/'
+alias devop='cd /home/permaditya/Documents/Adit/Learning/DevOps/'
+
+alias wip='cd /home/permaditya/Documents/Adit/Project/PSP/Laporan/Laporan Bulanan\ 2022/Media Pitch/ '
+
 
 # useful aliases for mv, cp, mkdir and rm
 alias mv='mv -iv'
@@ -459,6 +464,8 @@ alias rmgitcache="rm -r ~/.cache/git"
 #moving your personal files and folders from /personal to ~
 alias personal='cp -Rf /personal/* ~'
 
+
+
 #create a file called .zshrc-personal and put all your personal aliases
 #in there. They will not be overwritten by skel.
 
@@ -467,8 +474,8 @@ alias personal='cp -Rf /personal/* ~'
 
 
 ### RANDOM COLOR SCRIPT AND WEATHER ###
-#colorscript -e bloks
-curl -s "wttr.in/$1?M1q" | head -17
+colorscript -e bloks
+#curl -s "wttr.in/$1?M1q" | head -7
 
 # reporting tools - install when not installed
 #neofetch
