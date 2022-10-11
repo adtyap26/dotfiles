@@ -120,6 +120,21 @@ let NERDTreeMinimalUI = 1
 let g:NERDTreeWinSize=38
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => COC
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"
+
+let g:coc_snippet_next = '<tab>'
+let g:coc_status_error_sign = ' '
+let g:coc_status_warning_sign = ' '
+
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Theming
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 highlight LineNr           ctermfg=8    ctermbg=none    cterm=none
