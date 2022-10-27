@@ -1,6 +1,6 @@
 #!/bin/bash
 A="$(pacmd list-sources | grep -PB 1 "analog.*monitor>" | head -n 1 | perl -pe 's/.* //g')"
-F="$(date --iso-8601=minutes | perl -pe 's/[^0-9]+//g').mkv"
+# F="$(date --iso-8601=minutes | perl -pe 's/[^0-9]+//g').mkv"
 # V="$(xdpyinfo | grep dimensions | perl -pe 's/.* ([0-9]+x[0-9]+) .*/$1/g')"
 
 if pidof ffmpeg
@@ -30,7 +30,8 @@ if pidof ffmpeg
 # -vcodec libx264 -pix_fmt yuv420p -preset ultrafast -crf 0 -threads 0 \
 # -acodec pcm_s16le -y output.mkv
 #
-      ffmpeg -f x11grab -s "$W"x"$H" -framerate 60  -thread_queue_size 512  -i $DISPLAY.0+$X,$Y  -f pulse -i "$A" -f pulse -i default -filter_complex amerge -ac 2 -preset veryfast "$F"\
+      # -preset veryfast "$F"\
+      ffmpeg -f x11grab -s "$W"x"$H" -framerate 30  -thread_queue_size 512  -i $DISPLAY.0+$X,$Y  -f pulse -i "$A" -f pulse -i default -filter_complex amerge -ac 2 \
        -vcodec libx264 -qp 18 -preset ultrafast \
        ~/Videos/ScreenRecorder/recording-$time.mp4
 
