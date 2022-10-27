@@ -29,9 +29,16 @@ if pidof ffmpeg
 #       ffmpeg -f alsa -ac 2 -i pulse -f x11grab -r 25 -s 1366x768 -i :0.0 \
 # -vcodec libx264 -pix_fmt yuv420p -preset ultrafast -crf 0 -threads 0 \
 # -acodec pcm_s16le -y output.mkv
+
+
+#speaker On!
+# ffmpeg -f x11grab -s "$W"x"$H" -framerate 30  -thread_queue_size 512  -i $DISPLAY.0+$X,$Y  -f pulse -i "$A" -f pulse -i default -filter_complex amerge -ac 2 \
+#        -vcodec libx264 -qp 18 -preset ultrafast \
+#        ~/Videos/ScreenRecorder/recording-$time.mp4
+#
 #
       # -preset veryfast "$F"\
-      ffmpeg -f x11grab -s "$W"x"$H" -framerate 30  -thread_queue_size 512  -i $DISPLAY.0+$X,$Y  -f pulse -i "$A" -f pulse -i default -filter_complex amerge -ac 2 \
+      ffmpeg -f x11grab -s "$W"x"$H" -framerate 30  -thread_queue_size 512  -i $DISPLAY.0+$X,$Y  -f pulse -i "$A" -f pulse -i default \
        -vcodec libx264 -qp 18 -preset ultrafast \
        ~/Videos/ScreenRecorder/recording-$time.mp4
 
