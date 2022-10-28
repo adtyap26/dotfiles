@@ -22,6 +22,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'vimwiki/vimwiki'                             " VimWiki 
     Plug 'jreybert/vimagit'                            " Magit-like plugin for vim
     Plug 'voldikss/vim-floaterm'                      " Terminal
+    Plug 'mg979/vim-visual-multi', {'branch': 'master'} " Multi cursor
 "{{ javascript IDE }}
     Plug 'prabirshrestha/vim-lsp'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -43,6 +44,9 @@ call plug#begin('~/.vim/plugged')
     Plug 'junegunn/goyo.vim'                           " Distraction-free viewing
     Plug 'junegunn/limelight.vim'                      " Hyperfocus on a range
     Plug 'junegunn/vim-emoji'                          " Vim needs emojis!
+
+"{{ colorscheme }}
+    Plug 'joshdick/onedark.vim'                              " Onehalf colorscheme
 
 call plug#end()
 
@@ -71,6 +75,7 @@ set noswapfile                  " No swap
 set t_Co=256                    " Set if term supports 256 colors.
 set number relativenumber       " Display line numbers
 set clipboard=unnamedplus       " Copy/paste between vim and other programs.
+colorscheme onedark
 syntax enable
 let g:rehash256 = 1
 
@@ -89,8 +94,9 @@ map <leader>w :w<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " The lightline.vim theme
 let g:lightline = {
-      \ 'colorscheme': 'jellybeans',
-      \ }
+            \ 'colorscheme' :'onedark',
+            \}
+
 
 " Always show statusline
 set laststatus=2
@@ -111,7 +117,7 @@ set tabstop=4                   " One tab == four spaces.
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Uncomment to autostart the NERDTree
 " autocmd vimenter * NERDTree
-map <C-n> :NERDTreeToggle<CR>
+map <leader>e :NERDTreeToggle<CR>
 let g:NERDTreeDirArrowExpandable = '►'
 let g:NERDTreeDirArrowCollapsible = '▼'
 let NERDTreeShowLineNumbers=1
@@ -160,26 +166,26 @@ highlight FoldColumn       ctermfg=103     ctermbg=234     cterm=none
 highlight DiffAdd          ctermfg=none    ctermbg=23      cterm=none
 highlight DiffChange       ctermfg=none    ctermbg=56      cterm=none
 highlight DiffDelete       ctermfg=168     ctermbg=96      cterm=none
-  highlight DiffText         ctermfg=0       ctermbg=80      cterm=none
-  highlight SignColumn       ctermfg=244     ctermbg=235     cterm=none
-  highlight Conceal          ctermfg=251     ctermbg=none    cterm=none
-  highlight SpellBad         ctermfg=168     ctermbg=none    cterm=underline
-  highlight SpellCap         ctermfg=80      ctermbg=none    cterm=underline
-  highlight SpellRare        ctermfg=121     ctermbg=none    cterm=underline
-  highlight SpellLocal       ctermfg=186     ctermbg=none    cterm=underline
-  highlight Pmenu            ctermfg=251     ctermbg=234     cterm=none
-  highlight PmenuSel         ctermfg=0       ctermbg=111     cterm=none
-  highlight PmenuSbar        ctermfg=206     ctermbg=235     cterm=none
-  highlight PmenuThumb       ctermfg=235     ctermbg=206     cterm=none
-  highlight TabLine          ctermfg=244     ctermbg=234     cterm=none
-  highlight TablineSel       ctermfg=0       ctermbg=247     cterm=none
-  highlight TablineFill      ctermfg=244     ctermbg=234     cterm=none
-  highlight CursorColumn     ctermfg=none    ctermbg=236     cterm=none
-  highlight CursorLine       ctermfg=none    ctermbg=236     cterm=none
-  highlight ColorColumn      ctermfg=none    ctermbg=236     cterm=none
-  highlight Cursor           ctermfg=0       ctermbg=5       cterm=none
-  highlight htmlEndTag       ctermfg=114     ctermbg=none    cterm=none
-  highlight xmlEndTag        ctermfg=114     ctermbg=none    cterm=none
+highlight DiffText         ctermfg=0       ctermbg=80      cterm=none
+highlight SignColumn       ctermfg=244     ctermbg=235     cterm=none
+highlight Conceal          ctermfg=251     ctermbg=none    cterm=none
+highlight SpellBad         ctermfg=168     ctermbg=none    cterm=underline
+highlight SpellCap         ctermfg=80      ctermbg=none    cterm=underline
+highlight SpellRare        ctermfg=121     ctermbg=none    cterm=underline
+highlight SpellLocal       ctermfg=186     ctermbg=none    cterm=underline
+highlight Pmenu            ctermfg=251     ctermbg=234     cterm=none
+highlight PmenuSel         ctermfg=0       ctermbg=111     cterm=none
+highlight PmenuSbar        ctermfg=206     ctermbg=235     cterm=none
+highlight PmenuThumb       ctermfg=235     ctermbg=206     cterm=none
+highlight TabLine          ctermfg=244     ctermbg=234     cterm=none
+highlight TablineSel       ctermfg=0       ctermbg=247     cterm=none
+highlight TablineFill      ctermfg=244     ctermbg=234     cterm=none
+highlight CursorColumn     ctermfg=none    ctermbg=236     cterm=none
+highlight CursorLine       ctermfg=none    ctermbg=236     cterm=none
+highlight ColorColumn      ctermfg=none    ctermbg=236     cterm=none
+highlight Cursor           ctermfg=0       ctermbg=5       cterm=none
+highlight htmlEndTag       ctermfg=114     ctermbg=none    cterm=none
+highlight xmlEndTag        ctermfg=114     ctermbg=none    cterm=none
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VimWiki
