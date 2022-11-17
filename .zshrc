@@ -7,7 +7,10 @@ fi
 
 ###
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/.bin:/usr/local/bin:~/Scripts/:/usr/bin:/bin:/usr/local/sbin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin:$HOME/.cargo/bin:/usr/local/texlive/2022/bin/x86_64-linux
+
+MANPATH=/usr/local/texlive/2022/texmf-dist/doc/man:$MANPATH; export MANPATH
+INFOPATH=/usr/local/texlive/2022/texmf-dist/doc/info:$INFOPATH; export INFOPATH
 
 # Path to your oh-my-zsh installation.
 #installation via script from github
@@ -148,11 +151,15 @@ fi
 
 ### ALIASES ###
 # Changing "ls" to "exa"
-alias ls='exa -l --color=always --group-directories-first' # my preferred listing
-alias la='exa -a --color=always --group-directories-first'  # all files and dirs
-alias ll='exa -al --color=always --group-directories-first'  # long format
-alias lt='exa -aT --color=always --group-directories-first' # tree listing
-alias l.='exa -a | egrep "^\."'
+alias ls='exa -l --color=always --group-directories-first --icons' # my preferred listing
+alias la='exa -a --color=always --group-directories-first --icons'  # all files and dirs
+alias ll='exa -al --color=always --group-directories-first --icons'  # long format
+alias lt='exa -aT --color=always --group-directories-first --icons' # tree listing
+
+
+# Changing cat to bat
+
+alias cat='bat' 
 
 # GO to main project
 alias jav='cd /home/permaditya/Documents/Adit/Learning/COding/Javascript/'
@@ -464,17 +471,32 @@ alias rmgitcache="rm -r ~/.cache/git"
 #moving your personal files and folders from /personal to ~
 alias personal='cp -Rf /personal/* ~'
 
-
+#apps
+alias standard="standard-notes-3.23.170-linux-x86_64.AppImage"
+alias lzd='lazydocker'
+alias lzg='lazygit'
+alias record='screen-recorder.sh'
 
 #create a file called .zshrc-personal and put all your personal aliases
 #in there. They will not be overwritten by skel.
 
 [[ -f ~/.zshrc-personal ]] && . ~/.zshrc-personal
 
+### DUNTS
 
+run_dunst() {
+        if make -j dunst; then
+                pkill dunst
+        else
+                return 1
+        fi
+        ./dunst $@
+}
 
 ### RANDOM COLOR SCRIPT AND WEATHER ###
-colorscript -e bloks
+ colorscript -e elfman
+# pokemon-colorscripts -r
+
 #curl -s "wttr.in/$1?M1q" | head -7
 
 # reporting tools - install when not installed
