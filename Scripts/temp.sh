@@ -1,20 +1,19 @@
 #!/bin/bash
 
+tempfloat="$(sensors | grep -m 1 temp1 | awk '{gsub(/\+/,"")}1''{print $2}')"
+
 temp() {
-	tempstat="$(sensors | grep -m 1 temp1 | awk '{gsub(/\+/,"")}1''{print $2}')"
+  tempstat=${tempfloat%\.*}
+	    if [[ $tempstat -ge 30 ]] && [[ $tempstat -le 39 ]] ; then
+	    temp="" && sleep 10
+	    elif [[ $tempstat -ge 40 ]] && [[ $tempstat -le 49 ]] ; then
+	    temp="" && sleep 10
+	    elif [[ $tempstat -ge 50 ]] && [[ $tempstat -le 69 ]] ; then
+	    temp="" && sleep 10
+	    elif [[ $tempstat -ge 70 ]] ; then
+	    temp="" && sleep 10
+	    fi
 
-
-
-	if [[ $tempstat > 30.0 ]] && [[ $tempstat < 39.9 ]] ; then
-	    temp=""
-	elif [[ $tempstat > 40.0 ]] && [[ $tempstat < 49.9 ]] ; then
-		temp=""
-	elif [[ $tempstat > 50.0 ]] && [[ $tempstat < 69.9 ]] ; then
-		temp=""
-	elif [[ $tempstat > 70.0 ]] && [[ $tempstat < 90.0 ]] ; then
-		temp="⚠️"
-	fi
-
-	echo "$temp $tempstat"
+	    printf "$temp ${tempstat}°C"
 }
 echo "$(temp)"
