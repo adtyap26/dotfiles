@@ -310,6 +310,9 @@ alias startdocker="sudo systemctl start docker"
 #shopt -s histappend # do not overwrite history
 #shopt -s expand_aliases # expand aliases
 
+#ytfzf
+alias yt="ytfzf -t"
+
 #youtube download
 alias yta-aac="yt-dlp --extract-audio --audio-format aac "
 alias yta-best="yt-dlp --extract-audio --audio-format best "
