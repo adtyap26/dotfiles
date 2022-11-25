@@ -43,8 +43,8 @@ get_icon() {
     echo $icon
 }
 
-KEY="6ff7a537232f17eff69e00c180a377dd"
-CITY="Jakarta"
+KEY=""
+CITY=""
 UNITS="metric"
 SYMBOL="°C"
 
