@@ -11,7 +11,7 @@ fi
 # PUBLIC=$(curl -s https://ipinfo.io/ip)
 
 if [ "$CONNAME" = "" ]; then
-    printf "睊 \n "
+    printf "  No Connection \n "
 else
     (( ${#CONNAME} > 5 )) && CONNAME="${CONNAME:0:5}..."
     printf "  %s\n" "$CONNAME"
