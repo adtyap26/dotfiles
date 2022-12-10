@@ -16,7 +16,7 @@ super + F2
 
 #Standard Note
 super + F3
-    ~/Scripts/standard-notes-3.23.170-linux-x86_64.AppImage
+    /usr/bin/standard-notes-3.23.170-linux-x86_64.AppImage
 
 #Gimp
 super + F4
@@ -173,7 +173,7 @@ ctrl + shift + Escape
 
 #Scrot
 Print
-    scrot 'ArcoLinux-%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'; \
+    scrot 'Screenshot-%y-%m-%d:%H-%M.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'; \
     notify-send -i /usr/share/icons/Arc/status/symbolic/process-completed-symbolic.svg "Screenshot is saved!"
 
 #screeenshooter
