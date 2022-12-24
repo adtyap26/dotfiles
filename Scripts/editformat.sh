@@ -3,6 +3,12 @@
 # Ask the user to select a variable using dmenu or rofi
 selected=$(echo -e "1080\n720\n480\n360\n240" | dmenu -p "Please Select Quality: ")
 
+# Check the exit status of dmenu
+if [ $? -ne 0 ]; then
+  # The user either exited or did not select an option, so skip the rest of the script
+  exit
+fi
+
 # Set the selected variable
 if [ "$selected" == "1080" ]; then
   variable="1080" && notify-send '1080p Youtube Quality' --icon=dialog-information
