@@ -18,29 +18,30 @@ super + F2
 super + F3
     /usr/bin/standard-notes-3.23.170-linux-x86_64.AppImage
 
-#Gimp
+#dmenu_man
 super + F4
-    gimp
+    sh /usr/bin/dmenu_man.sh
 
-#Meld
+#emoji
 super + F5
-    meld
+    rofi -modi emoji -show emoji
 
-#Vlc
+#rofi calculator
 super + F6
-    vlc --video-on-top
-
-#Virtualbox
+    rofi -show calc -modi calc -no-show-match -no-sort
+ 
+#warp control
 super + F7
-    virtualbox
+    ~/Scripts/warpcontrol.sh
 
-#Thunar
-super + F8
-    thunar
+  
+#passmenu
+super + F9
+    ~/Scripts/passmenu.sh
 
-#Spotify
+#keymaps
 super + F10
-    spotify
+    ~/Scripts/dmenu_sxhkd.sh
 
 #Rofi Fullscreen
 super + F11
@@ -173,8 +174,12 @@ ctrl + shift + Escape
 
 #Scrot
 Print
-    scrot 'Screenshot-%y-%m-%d:%H-%M.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'; \
-    notify-send -i /usr/share/icons/Arc/status/symbolic/process-completed-symbolic.svg "Screenshot is saved!"
+    scrot -m '%Y-%m-%d-%s_screenshot.png' -e 'mv $f ~/Pictures'; \
+    notify-send -i ~/Apps/Tokyo-Night-GTK-Theme/icons/Tokyonight-Dark/actions/symbolic/view-list-images-symbolic.svg "Screenshot is saved!"
+
+SHIFT + ctrl + Print 
+    scrot -s '%Y-%m-%d-%s_screenshot.png' -e 'mv $f ~/Pictures'; \
+    notify-send -i ~/Apps/Tokyo-Night-GTK-Theme/icons/Tokyonight-Dark/actions/symbolic/view-list-images-symbolic.svg "Screenshot is saved!"
 
 #screeenshooter
 ctrl + Print
@@ -283,10 +288,10 @@ super + y
 super + f
 	bspc node --state \~fullscreen
 
-# Toggle pseudo tiling of window
-super + p
-	bspc node --state \~pseudo_tiled
-
+# # Toggle pseudo tiling of window
+# super + p
+# 	bspc node --state \~pseudo_tiled
+#
 #kill
 super + q
 	bspc node -c

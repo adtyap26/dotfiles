@@ -7,7 +7,11 @@ fi
 
 ###
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/.bin:/usr/local/bin:~/Scripts/:/usr/bin:/bin:/usr/local/sbin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin:$HOME/.cargo/bin:/usr/local/texlive/2022/bin/x86_64-linux
+export PATH=$HOME/.bin:/usr/local/bin:~/Scripts/:/usr/bin:/bin:/usr/local/sbin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin:$HOME/.cargo/bin:/usr/local/texlive/2022/bin/x86_64-linux:$NPM_PACKAGES/bin:$PATH
+export _JAVA_AWT_WM_NONREPARENTING=1
+export NPM_PACKAGES=$HOME/.npm-packages
+export NODE_PATH=$NPM_PACKAGES/lib/node_modules:$NODE_PATH
+
 
 MANPATH=/usr/local/texlive/2022/texmf-dist/doc/man:$MANPATH; export MANPATH
 INFOPATH=/usr/local/texlive/2022/texmf-dist/doc/info:$INFOPATH; export INFOPATH
@@ -17,13 +21,18 @@ INFOPATH=/usr/local/texlive/2022/texmf-dist/doc/info:$INFOPATH; export INFOPATH
 #export ZSH="/home/$USER/.oh-my-zsh"
 #installation via paru -S oh-my-zsh-git
 export ZSH=/usr/share/oh-my-zsh/
-
+# eval "$(starship init zsh)"
+# export STARSHIP_CACHE=~/.starship/cache
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # if you installed the package oh-my-zsh-powerline-theme-git then you type here "powerline" as zsh theme
-ZSH_THEME="mytheme"
+# ZSH_THEME="mytheme"
+# ZSH_THEME="powerlevel10k.zsh-theme"
+
+
+
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -111,14 +120,20 @@ fi
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
 # else
-#   export EDITOR='mvim'
+#   export EDITOR='nvim'
 # fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
 ####   ARCOLINUX SETTINGS   ####
-export PAGER='most'
+# export PAGER='most'
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+
+### "nvim" as manpager
+# export MANPAGER="nvim -c 'set ft=man' -"
+
+
 
 if [ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
   source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -134,7 +149,7 @@ unsetopt SHARE_HISTORY
 
 export HISTCONTROL=ignoreboth:erasedups
 
-# Make nano the default editor
+# Make neovim the default editor
 
 export EDITOR='nvim'
 export VISUAL='nvim'
@@ -150,11 +165,17 @@ if [ -d "$HOME/.local/bin" ] ;
 fi
 
 ### ALIASES ###
-# Changing "ls" to "exa"
-alias ls='exa -l --color=always --group-directories-first --icons' # my preferred listing
-alias la='exa -a --color=always --group-directories-first --icons'  # all files and dirs
-alias ll='exa -al --color=always --group-directories-first --icons'  # long format
-alias lt='exa -aT --color=always --group-directories-first --icons' # tree listing
+# # Changing "ls" to "exa"
+ alias ls='exa -l --color=always --group-directories-first --icons' # my preferred listing
+ alias la='exa -a --color=always --group-directories-first --icons'  # all files and dirs
+ alias ll='exa -al --color=always --group-directories-first --icons'  # long format
+ alias lt='exa -aT --color=always --group-directories-first --icons' # tree listing
+
+# Look keybinding
+alias key='~/Scripts/dmenu_sxhkd.sh'
+
+#look for tldr
+alias sm='~/Scripts/dmenu_man.sh'
 
 
 # Changing cat to bat
@@ -162,12 +183,15 @@ alias lt='exa -aT --color=always --group-directories-first --icons' # tree listi
 alias cat='bat' 
 
 # GO to main project
-alias jav='cd /home/permaditya/Documents/Adit/Learning/COding/Javascript/'
+alias js='cd /home/permaditya/Documents/Adit/Learning/COding/Javascript/'
+alias golang='cd /home/permaditya/Documents/Adit/Learning/COding/Golang/'
 alias nod='cd /home/permaditya/Documents/Adit/Learning/COding/Javascript/nodejs/'
 alias devop='cd /home/permaditya/Documents/Adit/Learning/DevOps/'
 
 alias wip='cd /home/permaditya/Documents/Adit/Project/PSP/Laporan/Laporan Bulanan\ 2022/Media Pitch/ '
 
+#Go to usb
+alias usb="cd /run/media/permaditya/"
 
 # useful aliases for mv, cp, mkdir and rm
 alias mv='mv -iv'
@@ -300,7 +324,8 @@ alias vmware-start="sudo systemctl enable --now vmtoolsd.service"
 alias sv="sudo systemctl enable --now vmtoolsd.service"
 
 #enabling docker
-alias startdocker="sudo systemctl start docker"
+alias sailing="sudo systemctl enable --now docker.service"
+alias docking="sudo systemctl disable --now docker.service docker.socket"
 
 #shopt
 #shopt -s autocd # change to named directory
@@ -318,7 +343,7 @@ alias yta-aac="yt-dlp --extract-audio --audio-format aac "
 alias yta-best="yt-dlp --extract-audio --audio-format best "
 alias yta-flac="yt-dlp --extract-audio --audio-format flac "
 alias yta-mp3="yt-dlp --extract-audio --audio-format mp3 "
-alias ytv-best="yt-dlp -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+bestaudio' --merge-output-format mp4 "
+alias ytv-best="yt-dlp -f 'bv*[height=720]+ba[ext=m4a]' --merge-output-format mp4 "
 
 #Recent Installed Packages
 alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
@@ -497,9 +522,12 @@ run_dunst() {
 }
 
 ### RANDOM COLOR SCRIPT AND WEATHER ###
- colorscript -e elfman
-# pokemon-colorscripts -r
 
+# colorscript -e elfman
+# pokemon-colorscripts --no-title -r
+# ~/Scripts/clock
+# LANG=en_US date +"%a, %B %d"
+ ~/Scripts/forecast.sh
 #curl -s "wttr.in/$1?M1q" | head -7
 
 # reporting tools - install when not installed
@@ -522,3 +550,5 @@ run_dunst() {
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
