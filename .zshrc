@@ -7,11 +7,15 @@ fi
 
 ###
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/.bin:/usr/local/bin:~/Scripts/:/usr/bin:/bin:/usr/local/sbin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin:$HOME/.cargo/bin:/usr/local/texlive/2022/bin/x86_64-linux:$NPM_PACKAGES/bin:$PATH
+export PATH=$HOME/.bin:/usr/local/bin:~/Scripts/:/usr/bin:/bin:/usr/local/sbin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin:$HOME/.cargo/bin:/usr/local/texlive/2022/bin/x86_64-linux:$NPM_PACKAGES/bin:$PATH:$GOROOT
 export _JAVA_AWT_WM_NONREPARENTING=1
 export NPM_PACKAGES=$HOME/.npm-packages
 export NODE_PATH=$NPM_PACKAGES/lib/node_modules:$NODE_PATH
+export GOPATH=$HOME/Documents/Adit/Learning/COding/Golang/go/
 
+#export GO
+export PATH=$PATH:$GOPATH/bin
+# export GOROOT=$GOPATH/go/bin
 
 MANPATH=/usr/local/texlive/2022/texmf-dist/doc/man:$MANPATH; export MANPATH
 INFOPATH=/usr/local/texlive/2022/texmf-dist/doc/info:$INFOPATH; export INFOPATH
@@ -30,8 +34,6 @@ export ZSH=/usr/share/oh-my-zsh/
 # if you installed the package oh-my-zsh-powerline-theme-git then you type here "powerline" as zsh theme
 # ZSH_THEME="mytheme"
 # ZSH_THEME="powerlevel10k.zsh-theme"
-
-
 
 
 # Set list of themes to pick from when loading at random
@@ -165,6 +167,11 @@ if [ -d "$HOME/.local/bin" ] ;
   then PATH="$HOME/.local/bin:$PATH"
 fi
 
+
+#vim mode 
+# set -o vi
+bindkey -v
+
 ### ALIASES ###
 # # Changing "ls" to "exa"
  alias ls='exa -l --color=always --group-directories-first --icons' # my preferred listing
@@ -189,7 +196,7 @@ alias golang='cd /home/permaditya/Documents/Adit/Learning/COding/Golang/'
 alias nod='cd /home/permaditya/Documents/Adit/Learning/COding/Javascript/nodejs/'
 alias devop='cd /home/permaditya/Documents/Adit/Learning/DevOps/'
 
-alias wip='cd /home/permaditya/Documents/Adit/Project/PSP/Laporan/Laporan Bulanan\ 2022/Media Pitch/ '
+alias psp='cd /home/permaditya/Documents/Adit/Project/PSP/'
 
 #Go to usb
 alias usb="cd /run/media/permaditya/"
