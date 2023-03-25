@@ -7,14 +7,15 @@ fi
 
 ###
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/.bin:/usr/local/bin:~/Scripts/:/usr/bin:/bin:/usr/local/sbin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin:$HOME/.cargo/bin:/usr/local/texlive/2022/bin/x86_64-linux:$NPM_PACKAGES/bin:$PATH:$GOROOT
+export PATH=$HOME/.bin:/usr/local/bin:~/Scripts/:~/Scripts/musikcube_linux_x86_64_0.99.5/:/usr/bin:/bin:/usr/local/sbin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin:$HOME/.cargo/bin:/usr/local/texlive/2022/bin/x86_64-linux:$NPM_PACKAGES/bin:$GOBIN:$HOME/.docker:$PATH
 export _JAVA_AWT_WM_NONREPARENTING=1
 export NPM_PACKAGES=$HOME/.npm-packages
 export NODE_PATH=$NPM_PACKAGES/lib/node_modules:$NODE_PATH
-export GOPATH=$HOME/Documents/Adit/Learning/COding/Golang/go/
+export GOPATH=$HOME/Documents/Adit/Learning/COding/Golang/
+export GOBIN=$GOPATH/go/bin
 
 #export GO
-export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOPATH/go/bin
 # export GOROOT=$GOPATH/go/bin
 
 MANPATH=/usr/local/texlive/2022/texmf-dist/doc/man:$MANPATH; export MANPATH
@@ -179,12 +180,23 @@ bindkey -v
  alias ll='exa -al --color=always --group-directories-first --icons'  # long format
  alias lt='exa -aT --color=always --group-directories-first --icons' # tree listing
 
+# vimdiff
+
+alias vimdiff="nvim -d"
+
+
+# stig --transmission-cli
+alias torrent='stig'
+
 # Look keybinding
 alias key='~/Scripts/dmenu_sxhkd.sh'
 
 #look for tldr
 alias sm='~/Scripts/dmenu_man.sh'
 
+
+#zathura
+alias za='zathura'
 
 # Changing cat to bat
 
@@ -195,6 +207,8 @@ alias js='cd /home/permaditya/Documents/Adit/Learning/COding/Javascript/'
 alias golang='cd /home/permaditya/Documents/Adit/Learning/COding/Golang/'
 alias nod='cd /home/permaditya/Documents/Adit/Learning/COding/Javascript/nodejs/'
 alias devop='cd /home/permaditya/Documents/Adit/Learning/DevOps/'
+alias remang='cd /home/permaditya/Downloads/manga'
+
 
 alias psp='cd /home/permaditya/Documents/Adit/Project/PSP/'
 
@@ -221,6 +235,7 @@ alias upal='paru -Syu --noconfirm'
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
+
 
 #readable output
 alias df='df -h'
@@ -444,6 +459,43 @@ alias bls="betterlockscreen -u /usr/share/backgrounds/arcolinux/"
 #give the list of all installed desktops - xsessions desktops
 alias xd="ls /usr/share/xsessions"
 
+
+#-------- Transmission CLI {{{
+#------------------------------------------------------
+# lightweight torrent daemon, has option for cli, webui, ncurses, and gui frontend 
+# WebUI:	http://localhost:9091/transmission/web/
+# 		http://192.168.1.xxx:9091/transmission/web/
+tsm-clearcompleted() {
+        transmission-remote -l | grep 100% | grep Done | \
+        awk '{print $1}' | xargs -n 1 -I % transmission-remote -t % -r ;}
+tsm() { transmission-remote --list ;}
+	# numbers of ip being blocked by the blocklist
+	# credit: smw from irc #transmission
+tsm-count() { echo "Blocklist rules:" $(curl -s --data \
+	'{"method": "session-get"}' localhost:9091/transmission/rpc -H \
+	"$(curl -s -D - localhost:9091/transmission/rpc | grep X-Transmission-Session-Id)" \
+	| cut -d: -f 11 | cut -d, -f1) ;}
+# demo video: http://www.youtube.com/watch?v=TyDX50_dC0M
+tsm-blocklist() { $PATH_SCRIPTS/blocklist.sh ;}		# update blocklist
+tsm-daemon() { transmission-daemon ;}
+tsm-quit() { killall transmission-daemon ;}
+tsm-altspeedenable() { transmission-remote --alt-speed ;}	# limit bandwidth
+tsm-altspeeddisable() {	transmission-remote --no-alt-speed ;}	# dont limit bandwidth
+tsm-add() { transmission-remote --add "$1" ;}
+tsm-askmorepeers() { transmission-remote -t"$1" --reannounce ;}
+tsm-pause() { transmission-remote -t"$1" --stop ;}		# <id> or all
+tsm-start() { transmission-remote -t"$1" --start ;}		# <id> or all
+tsm-purge() { transmission-remote -t"$1" --remove-and-delete ;} # delete data also
+tsm-remove() { transmission-remote -t"$1" --remove ;}		# leaves data alone
+tsm-info() { transmission-remote -t"$1" --info ;}
+tsm-speed() { while true;do clear; transmission-remote -t"$1" -i | grep Speed;sleep 1;done ;}
+
+# https://github.com/fagga/transmission-remote-cli
+# demo video: http://www.youtube.com/watch?v=hLz7ditUwY8
+tsm-ncurse() { transmission-remote-cli ;}
+
+#}}}
+
 # # ex = EXtractor for all kinds of archives
 # # usage: ex <file>
 ex ()
@@ -518,6 +570,13 @@ alias record='screen-recorder.sh'
 
 [[ -f ~/.zshrc-personal ]] && . ~/.zshrc-personal
 
+
+# personal function for search
+sc() { du -a ~/Scripts/* ~/.config/* | awk '{print $2}' | fzf --prompt="Select the file: " --height=30 --border --border-label="╢ Edit-File ╟" --color=label:italic:white --color bg:#111111,preview-bg:#111111  --preview 'cat {}'\
+  | xargs -r $EDITOR ;}
+
+
+
 ### DUNTS
 
 run_dunst() {
@@ -535,7 +594,7 @@ run_dunst() {
 # pokemon-colorscripts --no-title -r
 # ~/Scripts/clock
 # LANG=en_US date +"%a, %B %d"
- ~/Scripts/forecast.sh
+ # ~/Scripts/forecast.sh
 #curl -s "wttr.in/$1?M1q" | head -7
 
 # reporting tools - install when not installed
