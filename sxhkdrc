@@ -6,106 +6,98 @@
 # SUPER + FUNCTION KEYS
 #################################################################
 
-# Vivaldi
+# musikcube
 super + F1
-	vivaldi-stable
+ st -e musikcube
 
-# Atom
+# Edit Format Youtube 
 super + F2
-	atom
+	~/Scripts/editformat.sh
 
-#Inkscape
+#Standard Note
 super + F3
-    inkscape
+    /usr/bin/standard-notes-3.23.170-linux-x86_64.AppImage
 
-#Gimp
+#dmenu_hub
 super + F4
-    gimp
+    /usr/bin/dm-hub
 
-#Meld
+#systemd service
 super + F5
-    meld
+    ~/Scripts/servicecontrol.sh
 
-#Vlc
+#rofi wifi
 super + F6
-    vlc --video-on-top
+    ~/Scripts/rofi-wifi.sh  
 
-#Virtualbox
+#warp control
 super + F7
-    virtualbox
+    ~/Scripts/warpcontrol.sh
 
-#Thunar
-super + F8
-    thunar
-
-#Evolution
+  
+#passmenu
 super + F9
-    evolution
+    ~/Scripts/passmenu.sh
 
-#Spotify
+#keymaps
 super + F10
-    spotify
+    ~/Scripts/dmenu_sxhkd.sh
 
-#Rofi Fullscreen
+#ranger
 super + F11
-    rofi -theme-str 'window \{width: 100%;height: 100%;\}' -show drun
+    st -e ranger
+
 
 #Rofi
 super + r
     rofi -show drun
 
+#Screen record
+super + shift + p
+    /usr/bin/dm-record
+
+#Screen Record II
+super + shift + o
+   ~/Scripts/screen-recorder.sh
+
+#Screen Record III
+super + shift + i
+  ~/Scripts/dmenu_record
+
+
 #################################################################
 # SUPER + ... KEYS
 #################################################################
-
-#Atom
-super + e
-    atom
 
 #Browser
 super + w
     google-chrome-stable
 
-#Conky-toggle
-super + c
-    conky-toggle
 
-#Htop
-super + h
-    urxvt 'htop task manager' -e htop
-
-#archlinux-logout
+#logout
 super + x
-    archlinux-logout
+    /usr/bin/dm-logout
 
 #Rofi theme selector
 super + alt + r
     rofi-theme-selector
 
-#Urxvt
-super + t
-    urxvt
-
 #Pavucontrol
 super + v
     pavucontrol
 
-#Pragha
-super + m
-    pragha
 
-#st
+#ST
 super + Return
     st
 
+# floating terminal emulator
+super + ctrl + Return
+  alacritty -t 'falacritty' 
+  
 #Xkill
 super + Escape
     xkill
-
-#Keyboard dependent
-#st
-super + KP_Enter
-	st
 
 #################################################################
 # SUPER + SHIFT KEYS
@@ -118,184 +110,58 @@ super + shift + t
 #Keyboard dependent
 #File-Manager
 #super + shift + KP_Enter
-#	thunar
+#	thunarc
 
 #dmenu
 super + shift + m
-	dmenu_run -i -nb '#191919' -nf '#99D1CE' -sb '#F79936' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=14'
+	dmenu_run -i -nb '#191919' -nf '#eeeeee' -sb '#924441' -sf '#191919' -fn 'NotoMonoRegular:pixelsize=12'
+
+
+#nmtui
+super + shift + n
+  termite -e nmtui
+
+#dm-scripts
+super + ctrl + h
+  /usr/bin/dm-hub
+
+#dm-youtube
+super + shift + y
+ /usr/bin/ytfzf -D
+
+#dm-wifi
+super + shift + w 
+ /usr/bin/dm-wifi
+
+#dm-websearch
+super + shift + ctrl + w
+ /usr/bin/dm-websearch
 
 #reload sxhkd:
 super + shift + s
 	pkill -USR1 -x sxhkd
-
-#Keyboard dependent
-#super + shift + KP_Enter
-#	thunar
 
 
 #################################################################
 # CONTROL + ALT KEYS
 #################################################################
 
-#arcolinux-welcome-app
-ctrl + alt + w
-     arcolinux-welcome-app
-
-#arcolinux-tweak-tool
-ctrl + alt + e
-    arcolinux-tweak-tool
-
-#conky-rotate
-ctrl + alt + Next
-     conky-rotate -n
-
-#conky-rotate
-ctrl + alt + Prior
-    conky-rotate -p
-
-#File-Manager
-ctrl + alt + b
-     thunar
-
-#Catfish
-ctrl + alt + c
-     catfish
-
-#Chromium
-ctrl + alt + g
-    chromium -no-default-browser-check
-
-#Firefox
-ctrl + alt + f
-     firefox
-
-#Nitrogen
-ctrl + alt + i
-     nitrogen
-
-#arcolinux-logout
-ctrl + alt + k
-     arcolinux-logout
-
-#arcolinux-logout
-ctrl + alt + l
-    arcolinux-logout
-
-#Pamac-manager
-ctrl + alt + p
-    pamac-manager
-
-#Xfce4-settings-manager
+#dmenumount
 ctrl + alt + m
-     xfce4-settings-manager
-
-#Pulse Audio Control
+     ~/Scripts/usbmount.sh 
+#dmneuunmount
 ctrl + alt + u
-     pavucontrol
-
-#Rofi theme selector
-ctrl + alt + r
-  rofi-theme-selector
-
-#Spotify
-ctrl + alt + s
-   spotify
-
-#alacritty
-ctrl + alt + Return
-    st
-
-#alacritty
-ctrl + alt + t
-    alacritty
-
-#Vivaldi
-ctrl + alt + v
-    vivaldi-stable
-
-#Xfce4-appfinder
-ctrl + alt + a
-    xfce4-appfinder
-
-
-#Keyboard dependent
-#alacritty
-#ctrl + alt + KP_Enter
-#     alacritty
+     ~/Scripts/unmounter.sh 
 
 
 #################################################################
 # ALT + ... KEYS
 #################################################################
 
-#Wallpaper trash
-alt + t
-    variety -t
-
-#Wallpaper next
-alt + n
-    variety -n
-
-#Wallpaper previous
-alt + p
-    variety -p
-
-#Wallpaper favorite
-alt + f
-    variety -f
-
-#Wallpaper previous
-alt + Left
-    variety -p
-
-#Wallpaper next
-alt + Right
-    variety -n
-
-#Wallpaper toggle-pause
-alt + Up
-    variety --toggle-pause
-
-#Wallpaper resume
-alt + Down
-    variety --resume
-
-#Xfce appfinder
-alt + F2
-    xfce4-appfinder --collapsed
-
-#Xfce4-appfinder
-alt + F3
-    xfce4-appfinder
-
-#Xlunch app launcher
-#alt + F5
-#    xlunch --config ~/.config/xlunch/default.conf --input ~/.config/xlunch/entries.dsv   
-
 
 #################################################################
 #VARIETY KEYS WITH PYWAL
 #################################################################
-
-#Wallpaper trash
-alt + shift + t
-    variety -t && wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&
-
-#Wallpaper next
-alt + shift + n
-    variety -n && wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&
-
-#Wallpaper previous
-alt + shift + p
-    variety -p && wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&
-
-#Wallpaper favorite
-alt + shift + f
-    variety -f && wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&
-
-#Wallpaper update
-alt + shift + u
-    wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&
 
 #################################################################
 # CONTROL + SHIFT KEYS
@@ -312,41 +178,48 @@ ctrl + shift + Escape
 
 #Scrot
 Print
-    scrot 'ArcoLinux-%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'
+    scrot -m '%Y-%m-%d-%s_screenshot.png' -e 'mv $f ~/Pictures'; \
+    notify-send -i ~/Apps/Tokyo-Night-GTK-Theme/icons/Tokyonight-Dark/actions/symbolic/view-list-images-symbolic.svg "Screenshot is saved!"
+
+SHIFT + ctrl + Print 
+    scrot -s '%Y-%m-%d-%s_screenshot.png' -e 'mv $f ~/Pictures'; \
+    notify-send -i ~/Apps/Tokyo-Night-GTK-Theme/icons/Tokyonight-Dark/actions/symbolic/view-list-images-symbolic.svg "Screenshot is saved!"
 
 #screeenshooter
 ctrl + Print
      xfce4-screenshooter
 
-#Gnome-Screenshot
-ctrl + shift + Print
-     gnome-screenshot -i
-
-
-#################################################################
-#     FUNCTION KEYS
-#################################################################
-
-#xfce4-terminal dropdown
-F12
-    xfce4-terminal --drop-down
-
 
 #################################################################
 #     MULTIMEDIA KEYS
 #################################################################
-
-#Raises volume
+#
+# # #Raises volume
 XF86AudioRaiseVolume
-    amixer set Master 10%+
+    /usr/local/bin/volume.sh up; \
+   ~/Scripts/killdwmblock.sh
 
-#Lowers volume
+
+# # #Lowers volume
 XF86AudioLowerVolume
-    amixer set Master 10%-
+    /usr/local/bin/volume.sh down; \
+   ~/Scripts/killdwmblock.sh
+  
 
-#Mute
+  #Mute
 XF86AudioMute
-    amixer -D pulse set Master 1+ toggle
+    /usr/local/bin/volume.sh mute; \
+   ~/Scripts/killdwmblock.sh
+
+#Raises mic Volume
+super + ctrl + alt + o
+    amixer set Capture 10%+; \
+   ~/Scripts/killdwmblock.sh
+    
+
+super + ctrl + alt + p
+    amixer set Capture 10%-; \
+   ~/Scripts/killdwmblock.sh
 
 #Playerctl works for Pragha, Spotify and others
 #Delete the line for playerctl if you want to use mpc
@@ -374,16 +247,27 @@ XF86AudioStop
     playerctl stop
 
 #Brightness up
-XF86MonBrightnessUp
-    xbacklight -inc 10
+#XF86MonBrightnessUp
+#    xbacklight -inc 10
 
 #Brightness down
-XF86MonBrightnessDown
-    xbacklight -dec 10
+#XF86MonBrightnessDown
+#    xbacklight -dec 10
+
+#Brightness up sh
+#super + ctrl + SHIFT + p
+
+#Brightness down sh
+#super + ctrl + SHIFT + l 
 
 #########################
-#        POLYBAR        #
+#        DWMBLOCKS        #
 #########################
+
+#kill DWMBlocks
+super + ctrl + m
+   ~/Scripts/killdwmblock.sh
+
 
 #Hide polybar
 super + y
@@ -399,9 +283,6 @@ super + y
 # CTRL + ALT KEYS
 #################################################################
 
-#Picom Toggle
-ctrl + alt + o
-    ~/.config/bspwm/scripts/picom-toggle.sh
 
 #################################################################
 # SUPER + KEYS
@@ -411,10 +292,10 @@ ctrl + alt + o
 super + f
 	bspc node --state \~fullscreen
 
-# Toggle pseudo tiling of window
-super + p
-	bspc node --state \~pseudo_tiled
-
+# # Toggle pseudo tiling of window
+# super + p
+# 	bspc node --state \~pseudo_tiled
+#
 #kill
 super + q
 	bspc node -c
@@ -443,142 +324,142 @@ super + BackSpace
 # SUPER + ALT KEYS
 #################################################################
 
-# Move floating window
-super + alt + {_,shift + }{Left,Down,Up,Right}
-	~/.config/bspwm/scripts/move-window {_,edge-}{west,south,north,east}
-
-#################################################################
-# SUPER + CONTROL KEYS
-#################################################################
-
-# Cancel preselection
-super + ctrl + space
-	bspc node --presel-dir cancel
-
+# # Move floating window
+# super + alt + {_,shift + }{Left,Down,Up,Right}
+# 	~/.config/bspwm/scripts/move-window {_,edge-}{west,south,north,east}
+#
+# #################################################################
+# # SUPER + CONTROL KEYS
+# #################################################################
+#
+# # Cancel preselection
+# super + ctrl + space
+# 	bspc node --presel-dir cancel
+#
 #################################################################
 # SUPER + SHIFT KEYS
 #################################################################
 
 
 #Reload bspwm
-super + shift + r
-	~/.config/bspwm/bspwmrc
+# super + shift + r
+#~/.config/bspwm/bspwmrc
 
 #kill
-super + shift + q
-	bspc node -c
+#super + shift + q
+	#bspc node -c
 
 #Logout
 #super + shift + x
 #	bspc quit
 
-# Focus/swap windows by direction
-super + {_,shift + }{h,j,k,l}
-	bspc node --{focus,swap} {west,south,north,east}
-
-# Flip layout vertically/horizontally
-super + {_,shift + }a
-	bspc node @/ --flip {vertical,horizontal}
-
-# Move focused window to other monitor
-super + shift + Left
-	bspc node -m next --follow
-
-# Move focused window to other monitor
-super + shift + Right
-		bspc node -m next --follow
-
-# Move focused window to other monitor
-super + shift + Up
-	bspc node -m next --follow
-
-# Move focused window to other monitor
-super + shift + Down
-		bspc node -m next --follow
-
+# # Focus/swap windows by direction
+# super + {_,shift + }{h,j,k,l}
+# 	bspc node --{focus,swap} {west,south,north,east}
+#
+# # Flip layout vertically/horizontally
+# super + {_,shift + }a
+# 	bspc node @/ --flip {vertical,horizontal}
+#
+# # Move focused window to other monitor
+# super + shift + Left
+# 	bspc node -m next --follow
+#
+# # Move focused window to other monitor
+# super + shift + Right
+# 		bspc node -m next --follow
+#
+# # Move focused window to other monitor
+# super + shift + Up
+# 	bspc node -m next --follow
+#
+# # Move focused window to other monitor
+# super + shift + Down
+# 		bspc node -m next --follow
+#
 #################################################################
 # SUPER + CONTROL KEYS
 #################################################################
 
 # Focus/swap windows by direction
-super + ctrl + {Left,Down,Up,Right}
-	bspc node --{focus} {west,south,north,east}
-
-# Contract tiled space
-super + ctrl + {h,j,k,l}
-	bspc node {@east -r -10,@north -r +10,@south -r -10,@west -r +10}
-
-# Focus parent/brother/first/second for preselection
-super + ctrl + {e,r,t,y}
-	bspc node --focus @{parent,brother,first,second}
-
-# Preselect the splitting area for next window on leaf/parent
-super + ctrl + {u,i,o,p}
-	bspc node --presel-dir \~{west,south,north,east}
-
-# Define splitting ratio for next window on leaf/parent
-super + ctrl + {_,shift +}{1-9}
-	bspc node {_,@/} --presel-ratio 0.{1-9}
-
+# super + ctrl + {Left,Down,Up,Right}
+# 	bspc node --{focus} {west,south,north,east}
+#
+# # Contract tiled space
+# super + ctrl + {h,j,k,l}
+# 	bspc node {@east -r -10,@north -r +10,@south -r -10,@west -r +10}
+#
+# # Focus parent/brother/first/second for preselection
+# super + ctrl + {e,r,t,y}
+# 	bspc node --focus @{parent,brother,first,second}
+#
+# # Preselect the splitting area for next window on leaf/parent
+# super + ctrl + {u,i,o,p}
+# 	bspc node --presel-dir \~{west,south,north,east}
+#
+# # Define splitting ratio for next window on leaf/parent
+# super + ctrl + {_,shift +}{1-9}
+# 	bspc node {_,@/} --presel-ratio 0.{1-9}
+#
 
 #################################################################
 # ALT KEYS
 #################################################################
 
 #Focus selected desktop
-alt + Tab
-	bspc desktop -f '^{1-9,10}'
-
-	#Focus selected desktop
-alt + shift + Tab
-	bspc desktop -f '^{1-9,10}'
-
-#Rotate desktop
-alt + space
-	bspc node @/ --rotate {90,-90}
-
-
-# Resize or Expand float space 
-alt + ctrl + shift + {h,j,k,l}
-  bspc node -z {left -20 0 || bspc node -z right -20 0, \
-                bottom 0 20 || bspc node -z top 0 20,\
-                top 0 -20 || bspc node -z bottom 0 -20,\
-                right 20 0 || bspc node -z left 20 0}
-
-
+# alt + Tab
+# 	bspc desktop -f '^{1-9,10}'
+#
+# 	#Focus selected desktop
+# alt + shift + Tab
+# 	bspc desktop -f '^{1-9,10}'
+#
+# #Rotate desktop
+# alt + space
+# 	bspc node @/ --rotate {90,-90}
+#
+#
+# # Resize or Expand float space 
+# alt + ctrl + shift + {h,j,k,l}
+#   bspc node -z {left -20 0 || bspc node -z right -20 0, \
+#                 bottom 0 20 || bspc node -z top 0 20,\
+#                 top 0 -20 || bspc node -z bottom 0 -20,\
+#                 right 20 0 || bspc node -z left 20 0}
+#
+#
 #################################################################
 # ALT + SHIFT KEYS
 #################################################################
 
-# Resize or Expand tiled space
-alt + shift + {h,j,k,l}
-	bspc node {@west -r -10,@south -r +10,@north -r -10,@east -r +10}
-
+# # Resize or Expand tiled space
+# alt + shift + {h,j,k,l}
+# 	bspc node {@west -r -10,@south -r +10,@north -r -10,@east -r +10}
+#
 #################################################################
 # WORKSPACE AND CHANGE FOCUS
 #################################################################
 
-# Focus next/previous window
-super + Left
-  bspc node --focus west
-
-# Focus next/previous window
-super + Right
-	bspc node --focus east
-
-
-# Focus Up window
-super + Up
-	bspc node --focus north
-
-# Focus Down window
-super + Down
-  bspc node --focus south
-
-# Switch workspace
-ctrl + alt + {Left,Right}
-	bspc desktop -f  {prev.local,next.local}
-
+# # Focus next/previous window
+# super + Left
+#   bspc node --focus west
+#
+# # Focus next/previous window
+# super + Right
+# 	bspc node --focus east
+#
+#
+# # Focus Up window
+# super + Up
+# 	bspc node --focus north
+#
+# # Focus Down window
+# super + Down
+#   bspc node --focus south
+#
+# # Switch workspace
+# ctrl + alt + {Left,Right}
+# 	bspc desktop -f  {prev.local,next.local}
+#
 
 
 #################################################################
@@ -589,33 +470,33 @@ ctrl + alt + {Left,Right}
 
 #Switch here between qwerty and azerty or make new one
 #Focus selected desktop FOR QWERTY KEYBOARDS
-super + {1-9,0}
-	bspc desktop -f '^{1-9,10}'
-
-#Focus selected desktop	FOR BELIGIAN AZERTY KEYBOARDS
-#super + {ampersand,eacute,quotedbl,apostrophe,parenleft,section,egrave,exclam,ccedilla,agrave}
-#    bspc desktop -f '^{1-9,10}'
-
-#Focus selected desktop	FOR FRNECH AZERTY KEYBOARDS
-#super + {ampersand,eacute,quotedbl,apostrophe,parenleft,minus,egrave,underscore,ccedilla,agrave}
-#    bspc desktop -f '^{1-9,10}'
-
-#################################################################
-
-#Switch here between qwerty and azerty or make new one
-#Move window to selected desktop FOR QWERTY KEYBOARDS
-super + shift + {1-9,0}
-    id=$(bspc query -N -n); bspc node -d ^{1-9,10}; bspc node -f ${id}}
-
-#Move window to selected desktop FOR AZERTY KEYBOARDS
-#super + shift + {ampersand,eacute,quotedbl,apostrophe,parenleft,section,egrave,exclam,ccedilla,agrave}
-#    id=$(bspc query -N -n); bspc node -d ^{1-9,10}; bspc node -f ${id}}
-
-#################################################################
-
-
-## super & mouse scroll
-
-# Focused desktop window gap
-super + button{4,5}
-  bspc config -d focused window_gap $((`bspc config -d focused window_gap` {-,+} 2 ))
+# super + {1-9,0}
+# 	bspc desktop -f '^{1-9,10}'
+#
+# #Focus selected desktop	FOR BELIGIAN AZERTY KEYBOARDS
+# #super + {ampersand,eacute,quotedbl,apostrophe,parenleft,section,egrave,exclam,ccedilla,agrave}
+# #    bspc desktop -f '^{1-9,10}'
+#
+# #Focus selected desktop	FOR FRNECH AZERTY KEYBOARDS
+# #super + {ampersand,eacute,quotedbl,apostrophe,parenleft,minus,egrave,underscore,ccedilla,agrave}
+# #    bspc desktop -f '^{1-9,10}'
+#
+# #################################################################
+#
+# #Switch here between qwerty and azerty or make new one
+# #Move window to selected desktop FOR QWERTY KEYBOARDS
+# super + shift + {1-9,0}
+#     id=$(bspc query -N -n); bspc node -d ^{1-9,10}; bspc node -f ${id}}
+#
+# #Move window to selected desktop FOR AZERTY KEYBOARDS
+# #super + shift + {ampersand,eacute,quotedbl,apostrophe,parenleft,section,egrave,exclam,ccedilla,agrave}
+# #    id=$(bspc query -N -n); bspc node -d ^{1-9,10}; bspc node -f ${id}}
+#
+# #################################################################
+#
+#
+# ## super & mouse scroll
+#
+# # Focused desktop window gap
+# super + button{4,5}
+#   bspc config -d focused window_gap $((`bspc config -d focused window_gap` {-,+} 2 ))
