@@ -126,7 +126,7 @@ fi
 # else
 #   export EDITOR='nvim'
 # fi
-
+#
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
@@ -156,7 +156,9 @@ export HISTCONTROL=ignoreboth:erasedups
 # Make neovim the default editor
 
 export EDITOR='nvim'
-export VISUAL='nvim'
+export SUDO_EDITOR='nvim'
+export VISUAL='nvim'; 
+export VISUDO='nvim'
 
 #PS1='[\u@\h \W]\$ '
 
@@ -170,7 +172,7 @@ fi
 
 
 #vim mode 
-# set -o vi
+set -o vi
 bindkey -v
 
 ### ALIASES ###
@@ -184,6 +186,8 @@ bindkey -v
 
 alias vimdiff="nvim -d"
 
+# for ssh
+alias ssh='TERM=xterm-256color ssh'
 
 # stig --transmission-cli
 alias torrent='stig'
@@ -202,8 +206,10 @@ alias za='zathura'
 
 alias cat='bat' 
 
+
 # GO to main project
 alias js='cd /home/permaditya/Documents/Adit/Learning/COding/Javascript/'
+alias comprorwi='cd /home/permaditya/Public/Projects/company-profile/rwi/hugo/Rubrik_Wacana_Indonesia/'
 alias golang='cd /home/permaditya/Documents/Adit/Learning/COding/Golang/'
 alias nod='cd /home/permaditya/Documents/Adit/Learning/COding/Javascript/nodejs/'
 alias devop='cd /home/permaditya/Documents/Adit/Learning/DevOps/'
@@ -219,7 +225,7 @@ alias usb="cd /run/media/permaditya/"
 alias mv='mv -iv'
 alias cp='cp -riv'
 alias mkdir='mkdir -vp'
-alias rm='rm -I'
+alias rm='rm -i'
 
 #fix obvious typo's
 alias cd..='cd ..'
@@ -597,20 +603,6 @@ run_dunst() {
  # ~/Scripts/forecast.sh
 #curl -s "wttr.in/$1?M1q" | head -7
 
-# reporting tools - install when not installed
-#neofetch
-#screenfetch
-#alsi
-#paleofetch
-#fetch
-#hfetch
-#sfetch
-#ufetch
-#ufetch-arco
-#pfetch
-#sysinfo
-#sysinfo-retro
-#cpufetch
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 

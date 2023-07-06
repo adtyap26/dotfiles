@@ -10,7 +10,6 @@ let mapleader = " "           " map leader to Space
 call plug#begin('~/.vim/plugged')
 
 "{{ The Basics }}
-    Plug 'gmarik/Vundle.vim'                           " Vundle
     Plug 'itchyny/lightline.vim'                       " Lightline statusbar
     Plug 'frazrepo/vim-rainbow'
 "{{ File management }}
@@ -25,12 +24,9 @@ call plug#begin('~/.vim/plugged')
 "{{ javascript IDE }}
     Plug 'prabirshrestha/vim-lsp'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    Plug 'sheerun/vim-polyglot'
-    Plug 'pangloss/vim-javascript'
-    Plug 'grvcoelho/vim-javascript-snippets'
     Plug 'prettier/vim-prettier', {
                 \ 'do': 'yarn install --frozen-lockfile --production',
-                \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json','graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html', 'lua', 'jsx',] }
+                \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json','graphql', 'vue', 'svelte', 'yaml', 'html', 'lua', 'jsx',] }
 "{{ Tiu Pope Plugins }}
     Plug 'tpope/vim-surround'                          " Change surrounding marks
 "{{ Syntax Highlighting and Colors }}
@@ -40,10 +36,13 @@ call plug#begin('~/.vim/plugged')
 "{{ Junegunn Choi Plugins }}
     Plug 'junegunn/goyo.vim'                           " Distraction-free viewing
     Plug 'junegunn/limelight.vim'                      " Hyperfocus on a range
-    Plug 'junegunn/vim-emoji'                          " Vim needs emojis!
 
 "{{ colorscheme }}
     Plug 'ghifarit53/tokyonight-vim'
+
+"{{ Markdown }}
+    Plug 'vim-pandoc/vim-pandoc'
+    Plug 'vim-pandoc/vim-pandoc-syntax'               " Using pandoc to convert
 
 call plug#end()
 
@@ -71,7 +70,7 @@ set nobackup                    " No auto backups
 set noswapfile                  " No swap
 set t_Co=256                    " Set if term supports 256 colors.
 set number relativenumber       " Display line numbers
-set clipboard=unnamed           " Copy/paste between vim and other programs.
+set clipboard=unnamedplus       " Copy/paste between vim and other programs.
 syntax enable
 let g:rehash256 = 1
 
@@ -90,15 +89,10 @@ map <leader>w :w<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " The lightline.vim theme
 let g:lightline = {
-      \ 'colorscheme': 'one',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'component_function': {
-      \   'gitbranch': 'FugitiveHead'
-      \ },
-      \ }
+            \ 'colorscheme' :'one',
+            \}
+
+
 " Always show statusline
 set laststatus=2
 
