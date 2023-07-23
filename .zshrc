@@ -7,7 +7,7 @@ fi
 
 ###
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/.bin:/usr/local/bin:~/Scripts/:~/Scripts/musikcube_linux_x86_64_0.99.5/:/usr/bin:/bin:/usr/local/sbin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin:$HOME/.cargo/bin:/usr/local/texlive/2022/bin/x86_64-linux:$NPM_PACKAGES/bin:$GOBIN:$HOME/.docker:$PATH
+export PATH=$HOME/.bin:~/.local/bin:/usr/local/bin:~/Scripts/:~/Scripts/musikcube_linux_x86_64_0.99.5/:/usr/bin:/bin:/usr/local/sbin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin:$HOME/.cargo/bin:/usr/local/texlive/2022/bin/x86_64-linux:$NPM_PACKAGES/bin:$GOBIN:$HOME/.docker:$PATH
 export _JAVA_AWT_WM_NONREPARENTING=1
 export NPM_PACKAGES=$HOME/.npm-packages
 export NODE_PATH=$NPM_PACKAGES/lib/node_modules:$NODE_PATH
@@ -115,7 +115,7 @@ fi
 
 # User configuration
 
-# export MANPATH="/usr/local/man:$MANPATH"
+export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -126,16 +126,16 @@ fi
 # else
 #   export EDITOR='nvim'
 # fi
-#
+
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
 ####   ARCOLINUX SETTINGS   ####
 # export PAGER='most'
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-
+export MANROFFOPT="-c"
+export MANPAGER="sh -c 'col -bx | bat -plman'" 
 ### "nvim" as manpager
-# export MANPAGER="nvim -c 'set ft=man' -"
+#export MANPAGER="nvim -c 'set ft=man' -"
 
 
 
@@ -156,9 +156,7 @@ export HISTCONTROL=ignoreboth:erasedups
 # Make neovim the default editor
 
 export EDITOR='nvim'
-export SUDO_EDITOR='nvim'
-export VISUAL='nvim'; 
-export VISUDO='nvim'
+export VISUAL='nvim'
 
 #PS1='[\u@\h \W]\$ '
 
@@ -172,7 +170,7 @@ fi
 
 
 #vim mode 
-set -o vi
+# set -o vi
 bindkey -v
 
 ### ALIASES ###
@@ -182,12 +180,21 @@ bindkey -v
  alias ll='exa -al --color=always --group-directories-first --icons'  # long format
  alias lt='exa -aT --color=always --group-directories-first --icons' # tree listing
 
+# Himalaya email client
+alias m='himalaya'
+alias mwr='himalaya write'
+alias mr='himalaya read'
+alias mrep='himalaya reply'
+alias msy='himalaya account sync'
+
+
+
 # vimdiff
 
 alias vimdiff="nvim -d"
 
-# for ssh
-alias ssh='TERM=xterm-256color ssh'
+#neofetch
+alias neofetch="neofetch --ascii /home/permaditya/.config/neofetch/ascii-dwm"
 
 # stig --transmission-cli
 alias torrent='stig'
@@ -206,15 +213,14 @@ alias za='zathura'
 
 alias cat='bat' 
 
-
 # GO to main project
 alias js='cd /home/permaditya/Documents/Adit/Learning/COding/Javascript/'
-alias comprorwi='cd /home/permaditya/Public/Projects/company-profile/rwi/hugo/Rubrik_Wacana_Indonesia/'
 alias golang='cd /home/permaditya/Documents/Adit/Learning/COding/Golang/'
 alias nod='cd /home/permaditya/Documents/Adit/Learning/COding/Javascript/nodejs/'
 alias devop='cd /home/permaditya/Documents/Adit/Learning/DevOps/'
 alias remang='cd /home/permaditya/Downloads/manga'
-
+alias compro='cd /home/permaditya/Public/company-profile/rwi/hugo/'
+alias compros='cd /home/permaditya/Public/company-profile/sci/sintaksis.agency/'
 
 alias psp='cd /home/permaditya/Documents/Adit/Project/PSP/'
 
@@ -225,7 +231,7 @@ alias usb="cd /run/media/permaditya/"
 alias mv='mv -iv'
 alias cp='cp -riv'
 alias mkdir='mkdir -vp'
-alias rm='rm -i'
+alias rm='rm -I'
 
 #fix obvious typo's
 alias cd..='cd ..'
@@ -242,6 +248,9 @@ alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
+
+## ssh for unknow terminal
+alias ssh='TERM=xterm-256color ssh'
 
 #readable output
 alias df='df -h'
@@ -296,11 +305,6 @@ alias update-fc='sudo fc-cache -fv'
 
 #backup contents of /etc/skel to hidden backup folder in home/user
 alias bupskel='cp -Rf /etc/skel ~/.skel-backup-$(date +%Y.%m.%d-%H.%M.%S)'
-
-#copy shell configs
-alias cb='cp /etc/skel/.bashrc ~/.bashrc && echo "Copied."'
-alias cz='cp /etc/skel/.zshrc ~/.zshrc && exec zsh'
-alias cf='cp /etc/skel/.config/fish/config.fish ~/.config/fish/config.fish && echo "Copied."'
 
 #switch between bash and zsh
 alias tobash="sudo chsh $USER -s /bin/bash && echo 'Now log out.'"
@@ -582,7 +586,6 @@ sc() { du -a ~/Scripts/* ~/.config/* | awk '{print $2}' | fzf --prompt="Select t
   | xargs -r $EDITOR ;}
 
 
-
 ### DUNTS
 
 run_dunst() {
@@ -603,6 +606,20 @@ run_dunst() {
  # ~/Scripts/forecast.sh
 #curl -s "wttr.in/$1?M1q" | head -7
 
+# reporting tools - install when not installed
+#neofetch
+#screenfetch
+#alsi
+#paleofetch
+#fetch
+#hfetch
+#sfetch
+#ufetch
+#ufetch-arco
+#pfetch
+#sysinfo
+#sysinfo-retro
+#cpufetch
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
