@@ -1,20 +1,25 @@
 #!/bin/bash
 
-SESSIONS_FILE="/tmp/tmux_sessions"
-
 function run_st() {
     local st_command="st -e bash -c"
     local command="$1"
     $st_command "$command"
 }
 
+function ask_restore_session() {
+    local choice=$(echo -e "Yes\nNo" | rofi -dmenu -p "Do you want to restore the session?")
+    if [ "$choice" = "Yes" ]; then
+        tmux new-session -d &
+    else
+        exit 0
+    fi
+}
+
 function list_sessions() {
-    tmux list-sessions > "$SESSIONS_FILE"
-    local selected_session=$(cat "$SESSIONS_FILE" | rofi -dmenu -p "Tmux Sessions:" | awk '{print $1}')
+    local selected_session=$(tmux list-sessions | rofi -dmenu -p "Tmux Sessions:" | awk '{print $1}')
     if [ -n "$selected_session" ]; then
         run_st "tmux attach-session -t $selected_session"
     fi
-    rm "$SESSIONS_FILE"
 }
 
 function create_session() {
@@ -25,35 +30,37 @@ function create_session() {
 }
 
 function delete_session() {
-    tmux list-sessions > "$SESSIONS_FILE"
-    local selected_session=$(cat "$SESSIONS_FILE" | rofi -dmenu -p "Select a session to delete:" | awk '{print $1}')
+    local selected_session=$(tmux list-sessions | rofi -dmenu -p "Select a session to delete:" | awk '{print $1}')
     if [ -n "$selected_session" ]; then
         tmux kill-session -t "$selected_session"
-        rofi -e "Session deleted: $selected_session"
+        notify-send "Session deleted: $selected_session"
     fi
-    rm "$SESSIONS_FILE"
 }
 
 function main_menu() {
-    local options=("List Sessions" "Create New Session" "Delete Session" "Exit")
-    local selection=$(printf '%s\n' "${options[@]}" | rofi -dmenu -p "Choose an action:")
-    case "$selection" in
-        "List Sessions")
-            list_sessions
-            ;;
-        "Create New Session")
-            create_session
-            ;;
-        "Delete Session")
-            delete_session
-            ;;
-        "Exit")
-            exit 0
-            ;;
-        *)
-            echo "Invalid option."
-            ;;
-    esac
+    ask_restore_session
+
+    while true; do
+        local options=("List Sessions" "Create New Session" "Delete Session" "Exit")
+        local selection=$(printf '%s\n' "${options[@]}" | rofi -dmenu -p "Choose an action:")
+        case "$selection" in
+            "List Sessions")
+                list_sessions
+                ;;
+            "Create New Session")
+                create_session
+                ;;
+            "Delete Session")
+                delete_session
+                ;;
+            "Exit")
+                exit 0
+                ;;
+            *)
+                echo "Invalid option."
+                ;;
+        esac
+    done
 }
 
 main_menu
