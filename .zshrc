@@ -6,21 +6,22 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 ###
-# Define variables for paths
+# If you come from bash you might have to change your $PATH.
+export PATH=$HOME/.bin:~/.local/bin:/usr/local/bin:~/Scripts/:~/Scripts/musikcube_linux_x86_64_0.99.5/:/usr/bin:/bin:/usr/local/sbin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin:$HOME/.cargo/bin:/usr/local/texlive/2022/bin/x86_64-linux:$NPM_PACKAGES/bin:$GOBIN:$HOME/.docker:$PATH
+export _JAVA_AWT_WM_NONREPARENTING=1
 export NPM_PACKAGES=$HOME/.npm-packages
+export NODE_PATH=$NPM_PACKAGES/lib/node_modules:$NODE_PATH
 export GOPATH=$HOME/Documents/Adit/Learning/COding/Golang/
 export GOBIN=$GOPATH/go/bin
 
-# Set the PATH variable with organized paths
-export PATH=$HOME/.bin:~/.local/bin:/usr/local/bin:~/Scripts/:~/Scripts/musikcube_linux_x86_64_0.99.5/:/usr/bin:/bin:/usr/local/sbin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin:$HOME/.cargo/bin:/usr/local/texlive/2022/bin/x86_64-linux:$NPM_PACKAGES/bin:$GOBIN:$HOME/.docker
+#export GO
+export PATH=$PATH:$GOPATH/go/bin
+# export GOROOT=$GOPATH/go/bin
 
-# Other environment variables
-export _JAVA_AWT_WM_NONREPARENTING=1
-export NODE_PATH=$NPM_PACKAGES/lib/node_modules:$NODE_PATH
+MANPATH=/usr/local/texlive/2022/texmf-dist/doc/man:$MANPATH; export MANPATH
+INFOPATH=/usr/local/texlive/2022/texmf-dist/doc/info:$INFOPATH; export INFOPATH
 
-# # Add Go bin directory to the PATH
-# export PATH=$PATH:$GOBIN
-# # Path to your oh-my-zsh installation.
+# Path to your oh-my-zsh installation.
 #installation via script from github
 #export ZSH="/home/$USER/.oh-my-zsh"
 #installation via paru -S oh-my-zsh-git
@@ -186,8 +187,7 @@ alias mr='himalaya read'
 alias mrep='himalaya reply'
 alias msy='himalaya account sync'
 
-#git config for managing dotfiles
-alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+
 
 # vimdiff
 
