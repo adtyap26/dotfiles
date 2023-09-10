@@ -1,0 +1,4 @@
+0000000000000000000000000000000000000000 4586e0664191ff243a2e9709c9f31cf7cc183cea Aditya Permana <permanaaditya2606@gmail.com> 1694349306 +0700	clone: from github.com:adtyap26/dotfiles.git
+4586e0664191ff243a2e9709c9f31cf7cc183cea 4586e0664191ff243a2e9709c9f31cf7cc183cea Aditya Permana <permanaaditya2606@gmail.com> 1694349328 +0700	checkout: moving from main to chezmoi
+4586e0664191ff243a2e9709c9f31cf7cc183cea 4d09fe0f3ee5a446161575d0b6b27817bb81fc46 Aditya Permana <permanaaditya2606@gmail.com> 1694349404 +0700	commit: migrating to chezmoi
+4d09fe0f3ee5a446161575d0b6b27817bb81fc46 4586e0664191ff243a2e9709c9f31cf7cc183cea Aditya Permana <permanaaditya2606@gmail.com> 1694350292 +0700	checkout: moving from chezmoi to main
