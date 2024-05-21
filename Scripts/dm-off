@@ -1,0 +1,33 @@
+#!/bin/bash
+
+DMENU="dmenu -i -l 5 -p"
+
+selected_option=$(echo -e "Power Off\nRestart\nLog Out\nLock Screen\nExit" | $DMENU "Select an option:")
+
+case "$selected_option" in
+    "Power Off")
+        confirm_option=$(echo -e "Yes\nNo" | $DMENU "Are you sure you want to power off?")
+        if [ "$confirm_option" = "Yes" ]; then
+            sudo poweroff
+        fi
+        ;;
+    "Restart")
+        confirm_option=$(echo -e "Yes\nNo" | $DMENU "Are you sure you want to restart?")
+        if [ "$confirm_option" = "Yes" ]; then
+            sudo reboot
+        fi
+        ;;
+    "Log Out")
+        confirm_option=$(echo -e "Yes\nNo" | $DMENU "Are you sure you want to log out?")
+        if [ "$confirm_option" = "Yes" ]; then
+            killall -u $USER
+        fi
+        ;;
+    "Lock Screen")
+        slock
+        ;;
+    "Exit")
+        exit 0
+        ;;
+esac
+

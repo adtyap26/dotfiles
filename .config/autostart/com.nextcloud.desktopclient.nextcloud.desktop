@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Nextcloud
+GenericName=File Synchronizer
+Exec="/home/permaditya/Apps/Nextcloud/Nextcloud-3.9.3-x86_64.AppImage" --background
+Terminal=false
+Icon=Nextcloud
+Categories=Network
+Type=Application
+StartupNotify=false
+X-GNOME-Autostart-enabled=true
+X-GNOME-Autostart-Delay=10

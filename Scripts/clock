@@ -1,4 +1,8 @@
 #! /bin/bash 
 
-dte="$(date +"%a, %B %d %l:%M%p"| sed 's/  / /g')"
+
+dte="$(LC_TIME=en_US.UTF-8 date +"%a, %B %d - %l:%M %p" | sed 's/  / /g')"
+
+
+# dte="$(LC_TIME=en_US.UTF-8 date +"%a, %m/%d/%Y/ %l:%M %P" | sed 's/  / /g')"
 echo -e "$dte"

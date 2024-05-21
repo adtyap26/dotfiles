@@ -1,0 +1,38 @@
+{
+	"window-bounds": {
+		"x": 6,
+		"y": 31,
+		"width": 1908,
+		"height": 1043
+	},
+	"lastOpenedCollections": [
+		"/home/permaditya/Database/log/CP-Kafka"
+	],
+	"preferences": {
+		"request": {
+			"sslVerification": false,
+			"customCaCertificate": {
+				"enabled": true,
+				"filePath": "/home/permaditya/Database/server/certs/kafka-cluster/server.ca.crt"
+			},
+			"timeout": 0,
+			"storeCookies": true,
+			"sendCookies": true
+		},
+		"font": {
+			"codeFont": "default"
+		},
+		"proxy": {
+			"enabled": false,
+			"protocol": "http",
+			"hostname": "",
+			"port": null,
+			"auth": {
+				"enabled": false,
+				"username": "",
+				"password": ""
+			},
+			"bypassProxy": ""
+		}
+	}
+}

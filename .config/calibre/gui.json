@@ -1,0 +1,469 @@
+{
+  "basic_metadata_widget_splitter_state": {
+    "__class__": "bytearray",
+    "__value__": "AAAA/wAAAAEAAAADAAAA3gAAAU0AAAEKAf////8BAAAAAQA="
+  },
+  "book_details_splitter_horizontal_state": [
+    true,
+    225
+  ],
+  "book_details_splitter_vertical_state": [
+    true,
+    120
+  ],
+  "book_list_pin_splitter_state": {
+    "__class__": "bytearray",
+    "__value__": "AAAA/wAAAAEAAAACAAABAAAAAEYA/////wEAAAABAA=="
+  },
+  "color_palette": "dark",
+  "cover_browser_splitter_horizontal_state": [
+    false,
+    550
+  ],
+  "cover_browser_splitter_vertical_state": [
+    false,
+    300
+  ],
+  "cover_grid_color": [
+    80,
+    80,
+    80
+  ],
+  "cover_grid_texture": null,
+  "custom_colors_for_color_dialog": [
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ]
+  ],
+  "default_author_link": null,
+  "geometry-of-calibre_main_window_geometry": {
+    "frame_geometry": {
+      "height": 1025,
+      "width": 1890,
+      "x": 9,
+      "y": 34
+    },
+    "full_screened": false,
+    "geometry": {
+      "height": 1013,
+      "width": 1878,
+      "x": 15,
+      "y": 40
+    },
+    "maximized": false,
+    "normal_geometry": {
+      "height": 1013,
+      "width": 1878,
+      "x": 15,
+      "y": 40
+    },
+    "qt": {
+      "__class__": "bytearray",
+      "__value__": "AdnQywADAAAAAAAJAAAAIgAAB2oAAAQiAAAADwAAACgAAAdkAAAEHAAAAAAAAAAAB4AAAAAPAAAAKAAAB2QAAAQc"
+    },
+    "screen": {
+      "depth": 24,
+      "device_pixel_ratio": 1.0,
+      "geometry_in_logical_pixels": {
+        "height": 1080,
+        "width": 1920,
+        "x": 0,
+        "y": 0
+      },
+      "index_in_screens_list": 0,
+      "manufacturer": "",
+      "model": "",
+      "name": "HDMI-2",
+      "serial": "",
+      "size_in_logical_pixels": {
+        "height": 1080,
+        "width": 1920
+      },
+      "virtual_geometry": {
+        "height": 1080,
+        "width": 1920,
+        "x": 0,
+        "y": 0
+      }
+    }
+  },
+  "geometry-of-choose-icon-theme-dialog-geometry": {
+    "frame_geometry": {
+      "height": 1017,
+      "width": 912,
+      "x": 504,
+      "y": 31
+    },
+    "full_screened": false,
+    "geometry": {
+      "height": 1005,
+      "width": 900,
+      "x": 510,
+      "y": 37
+    },
+    "maximized": false,
+    "normal_geometry": {
+      "height": 1005,
+      "width": 900,
+      "x": 510,
+      "y": 37
+    },
+    "qt": {
+      "__class__": "bytearray",
+      "__value__": "AdnQywADAAAAAAH4AAAAHwAABYcAAAQXAAAB/gAAACUAAAWBAAAEEQAAAAAAAAAAB4AAAAH+AAAAJQAABYEAAAQR"
+    },
+    "screen": {
+      "depth": 24,
+      "device_pixel_ratio": 1.0,
+      "geometry_in_logical_pixels": {
+        "height": 1080,
+        "width": 1920,
+        "x": 0,
+        "y": 0
+      },
+      "index_in_screens_list": 0,
+      "manufacturer": "",
+      "model": "",
+      "name": "eDP-1",
+      "serial": "",
+      "size_in_logical_pixels": {
+        "height": 1080,
+        "width": 1920
+      },
+      "virtual_geometry": {
+        "height": 1080,
+        "width": 1920,
+        "x": 0,
+        "y": 0
+      }
+    }
+  },
+  "geometry-of-duplicates-question-dialog-geometry": {
+    "frame_geometry": {
+      "height": 390,
+      "width": 526,
+      "x": 697,
+      "y": 345
+    },
+    "full_screened": false,
+    "geometry": {
+      "height": 378,
+      "width": 514,
+      "x": 703,
+      "y": 351
+    },
+    "maximized": false,
+    "normal_geometry": {
+      "height": 378,
+      "width": 514,
+      "x": 703,
+      "y": 351
+    },
+    "qt": {
+      "__class__": "bytearray",
+      "__value__": "AdnQywADAAAAAAK5AAABWQAABMYAAALeAAACvwAAAV8AAATAAAAC2AAAAAAAAAAAB4AAAAK/AAABXwAABMAAAALY"
+    },
+    "screen": {
+      "depth": 24,
+      "device_pixel_ratio": 1.0,
+      "geometry_in_logical_pixels": {
+        "height": 1080,
+        "width": 1920,
+        "x": 0,
+        "y": 0
+      },
+      "index_in_screens_list": 0,
+      "manufacturer": "",
+      "model": "",
+      "name": "HDMI-2",
+      "serial": "",
+      "size_in_logical_pixels": {
+        "height": 1080,
+        "width": 1920
+      },
+      "virtual_geometry": {
+        "height": 1080,
+        "width": 1920,
+        "x": 0,
+        "y": 0
+      }
+    }
+  },
+  "geometry-of-metasingle_window_geometry3": {
+    "frame_geometry": {
+      "height": 1042,
+      "width": 1862,
+      "x": 29,
+      "y": 19
+    },
+    "full_screened": false,
+    "geometry": {
+      "height": 1030,
+      "width": 1850,
+      "x": 35,
+      "y": 25
+    },
+    "maximized": false,
+    "normal_geometry": {
+      "height": 1030,
+      "width": 1850,
+      "x": 35,
+      "y": 25
+    },
+    "qt": {
+      "__class__": "bytearray",
+      "__value__": "AdnQywADAAAAAAAdAAAAEwAAB2IAAAQkAAAAIwAAABkAAAdcAAAEHgAAAAAAAAAAB4AAAAAjAAAAGQAAB1wAAAQe"
+    },
+    "screen": {
+      "depth": 24,
+      "device_pixel_ratio": 1.0,
+      "geometry_in_logical_pixels": {
+        "height": 1080,
+        "width": 1920,
+        "x": 0,
+        "y": 0
+      },
+      "index_in_screens_list": 0,
+      "manufacturer": "",
+      "model": "",
+      "name": "eDP-1",
+      "serial": "",
+      "size_in_logical_pixels": {
+        "height": 1080,
+        "width": 1920
+      },
+      "virtual_geometry": {
+        "height": 1080,
+        "width": 1920,
+        "x": 0,
+        "y": 0
+      }
+    }
+  },
+  "geometry-of-preferences dialog geometry": {
+    "frame_geometry": {
+      "height": 732,
+      "width": 942,
+      "x": 489,
+      "y": 174
+    },
+    "full_screened": false,
+    "geometry": {
+      "height": 720,
+      "width": 930,
+      "x": 495,
+      "y": 180
+    },
+    "maximized": false,
+    "normal_geometry": {
+      "height": 720,
+      "width": 930,
+      "x": 495,
+      "y": 180
+    },
+    "qt": {
+      "__class__": "bytearray",
+      "__value__": "AdnQywADAAAAAAHpAAAArgAABZYAAAOJAAAB7wAAALQAAAWQAAADgwAAAAAAAAAAB4AAAAHvAAAAtAAABZAAAAOD"
+    },
+    "screen": {
+      "depth": 24,
+      "device_pixel_ratio": 1.0,
+      "geometry_in_logical_pixels": {
+        "height": 1080,
+        "width": 1920,
+        "x": 0,
+        "y": 0
+      },
+      "index_in_screens_list": 0,
+      "manufacturer": "",
+      "model": "",
+      "name": "HDMI-2",
+      "serial": "",
+      "size_in_logical_pixels": {
+        "height": 1080,
+        "width": 1920
+      },
+      "virtual_geometry": {
+        "height": 1080,
+        "width": 1920,
+        "x": 0,
+        "y": 0
+      }
+    }
+  },
+  "geometry-of-quickview_dialog_geometry": {
+    "frame_geometry": {
+      "height": 1042,
+      "width": 1912,
+      "x": 4,
+      "y": 19
+    },
+    "full_screened": false,
+    "geometry": {
+      "height": 1030,
+      "width": 1900,
+      "x": 10,
+      "y": 25
+    },
+    "maximized": false,
+    "normal_geometry": {
+      "height": 1030,
+      "width": 1900,
+      "x": 10,
+      "y": 25
+    },
+    "qt": {
+      "__class__": "bytearray",
+      "__value__": "AdnQywADAAAAAAAEAAAAEwAAB3sAAAQkAAAACgAAABkAAAd1AAAEHgAAAAAAAAAAB4AAAAAKAAAAGQAAB3UAAAQe"
+    },
+    "screen": {
+      "depth": 24,
+      "device_pixel_ratio": 1.0,
+      "geometry_in_logical_pixels": {
+        "height": 1080,
+        "width": 1920,
+        "x": 0,
+        "y": 0
+      },
+      "index_in_screens_list": 0,
+      "manufacturer": "",
+      "model": "",
+      "name": "eDP-1",
+      "serial": "",
+      "size_in_logical_pixels": {
+        "height": 1080,
+        "width": 1920
+      },
+      "virtual_geometry": {
+        "height": 1080,
+        "width": 1920,
+        "x": 0,
+        "y": 0
+      }
+    }
+  },
+  "grid view visible": false,
+  "library_usage_stats": {
+    "/home/permaditya/Database/library": 20,
+    "/home/permaditya/Database/libs": 3
+  },
+  "previous_sort_order_BooksView": {
+    "tags": true,
+    "title": true
+  },
+  "quick_start_guide_added": true,
+  "quickview visible": false,
+  "quickview_dialog_books_table_widths": [
+    268,
+    268,
+    268
+  ],
+  "recently_used_languages": [],
+  "search bar visible": true,
+  "show_emblems": false,
+  "tag browser search box visible": false,
+  "tag_browser_splitter_horizontal_state": [
+    true,
+    200
+  ],
+  "tb_search_order": {
+    "0": 1,
+    "1": 2,
+    "2": 3,
+    "3": 4,
+    "4": 0
+  }
+}

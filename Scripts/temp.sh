@@ -1,6 +1,6 @@
 #!/bin/bash
 
-tempfloat="$(sensors | grep -m 1 temp1 | awk '{gsub(/\+/,"")}1''{print $2}')"
+tempfloat="$(sensors | grep -m 1 CPU | awk '{gsub(/\+/,"")}1''{print $2}')"
 
 temp() {
   tempstat=${tempfloat%\.*}

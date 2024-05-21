@@ -6,46 +6,50 @@
 # SUPER + FUNCTION KEYS
 #################################################################
 
-# musikcube
+# Layout Screen
 super + F1
-	st -e musikcube
+ ~/Scripts/rofi_layout.sh
 
-# Atom
+# Edit Format Youtube 
 super + F2
 	~/Scripts/editformat.sh
 
-#Standard Note
+#Keybinding
 super + F3
-    /usr/bin/standard-notes-3.23.170-linux-x86_64.AppImage
+  ~/Scripts/rofi_sxhkd.sh
 
-#dmenu_man
+#dmenu_hub
 super + F4
-    sh /usr/bin/dmenu_man.sh
+    /usr/bin/dm-hub
 
-#emoji
+#bluetuith
 super + F5
-    rofi -modi emoji -show emoji
+    alacritty -t 'falacritty' -e 'bluetuith' 
 
-#rofi calculator
+#mixer control
 super + F6
-    rofi -show calc -modi calc -no-show-match -no-sort
- 
-#warp control
-super + F7
-    ~/Scripts/warpcontrol.sh
+    alacritty -t 'falacritty' -e 'ncpamixer' 
 
-  
+#rofi_tmux
+super + F7
+    ~/Scripts/rofi_tmux.sh
+
+#rofi wifi
+super + F8
+    /usr/bin/networkmanager_dmenu  
+ 
 #passmenu
-super + F9
-    ~/Scripts/passmenu.sh
+super + ctrl + p
+    ~/Scripts/passmenu-otp
+
 
 #keymaps
-super + F10
-    ~/Scripts/dmenu_sxhkd.sh
-
-#Rofi Fullscreen
 super + F11
-    rofi -theme-str 'window \{width: 100%;height: 100%;\}' -show drun
+    ~/Scripts/screenkey-toggle.sh
+
+#Device control
+super + F12
+   alacritty -e /usr/bin/hackernews_tui 
 
 #Rofi
 super + r
@@ -53,7 +57,7 @@ super + r
 
 #Screen record
 super + shift + p
-    /usr/bin/dm_record
+    /usr/bin/dm-record
 
 #Screen Record II
 super + shift + o
@@ -70,7 +74,7 @@ super + shift + i
 
 #Browser
 super + w
-    google-chrome-stable
+    firefox
 
 
 #logout
@@ -90,17 +94,25 @@ super + v
 super + Return
     st
 
+# floating terminal emulator
+super + ctrl + Return
+  alacritty -t 'falacritty' 
+  
 #Xkill
 super + Escape
     xkill
+
 
 #################################################################
 # SUPER + SHIFT KEYS
 #################################################################
 
-#File-Manager
+#trayer
 super + shift + t
-	thunar
+	trayer --edge bottom --distance 20 --align left --SetDockType true --SetPartialStrut true --width 10 --transparent true --alpha 0 --tint 0x292d3e  --height 19
+
+super + shift + h
+	pkill -USR1 -x trayer
 
 #Keyboard dependent
 #File-Manager
@@ -109,7 +121,8 @@ super + shift + t
 
 #dmenu
 super + shift + m
-	dmenu_run -i -nb '#191919' -nf '#eeeeee' -sb '#924441' -sf '#191919' -fn 'NotoMonoRegular:pixelsize=12'
+	# dmenu_run -i -nb '#191919' -nf '#eeeeee' -sb '#924441' -sf '#191919' -fn 'NotoMonoRegular:pixelsize=30'
+	dmenu_run -i -nb '#191919' -nf '#eeeeee' -sb '#924441' -sf '#191919' -fn 'Gohu:pixelsize=30'
 
 
 #nmtui
@@ -143,11 +156,10 @@ super + shift + s
 
 #dmenumount
 ctrl + alt + m
-     ~/Scripts/usbmount.sh --mount
-
+     ~/Scripts/usbmount.sh 
 #dmneuunmount
 ctrl + alt + u
-     ~/Scripts/usbmount.sh --umount
+     ~/Scripts/unmounter.sh 
 
 
 #################################################################
@@ -190,33 +202,36 @@ ctrl + Print
 #     MULTIMEDIA KEYS
 #################################################################
 #
-# # #Raises volume
+# # # #Raises volume
 XF86AudioRaiseVolume
-    /usr/local/bin/volume.sh up; \
-   ~/Scripts/killdwmblock.sh
-
-
-# # #Lowers volume
+# super + ctrl + alt + v
+     /usr/local/bin/volume.sh up; \
+    ~/Scripts/killdwmblock.sh
+#
+#
+# # # #Lowers volume
 XF86AudioLowerVolume
-    /usr/local/bin/volume.sh down; \
-   ~/Scripts/killdwmblock.sh
-  
-
-  #Mute
+# super + ctrl + alt + d
+     /usr/local/bin/volume.sh down; \
+    ~/Scripts/killdwmblock.sh
+#   
+#
+#   #Mute
 XF86AudioMute
-    /usr/local/bin/volume.sh mute; \
-   ~/Scripts/killdwmblock.sh
-
-#Raises mic Volume
-super + ctrl + alt + o
-    amixer set Capture 10%+; \
-   ~/Scripts/killdwmblock.sh
-    
-
-super + ctrl + alt + p
-    amixer set Capture 10%-; \
-   ~/Scripts/killdwmblock.sh
-
+# super + ctrl + alt + m
+     /usr/local/bin/volume.sh mute; \
+    ~/Scripts/killdwmblock.sh
+#
+# #Raises mic Volume
+ super + ctrl + alt + o
+     amixer set Capture 10%+; \
+    ~/Scripts/killdwmblock.sh
+#     
+#Lowers mic Volume
+ super + ctrl + alt + p
+     amixer set Capture 10%-; \
+    ~/Scripts/killdwmblock.sh
+#
 #Playerctl works for Pragha, Spotify and others
 #Delete the line for playerctl if you want to use mpc
 #and replace it with the corresponding code
@@ -243,11 +258,13 @@ XF86AudioStop
     playerctl stop
 
 #Brightness up
-#XF86MonBrightnessUp
+XF86MonBrightnessUp
+   # ~/Scripts/backlight.sh +
 #    xbacklight -inc 10
 
 #Brightness down
-#XF86MonBrightnessDown
+XF86MonBrightnessDown
+   # ~/Scripts/backlight.sh -
 #    xbacklight -dec 10
 
 #Brightness up sh

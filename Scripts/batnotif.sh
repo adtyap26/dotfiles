@@ -5,8 +5,8 @@
 last="NONE"
 
 # Default values for LOW/CRITICAL status
-low=20
-critical=15
+low=35
+critical=20
 
 while true; do
 
@@ -19,20 +19,20 @@ while true; do
 
     # If battery full and not already warned about that
     if [ "$last" != "FULL" ] && [ "$status" = "Full" ]; then
-      notify-send -i /usr/share/icons/Sardi/scalable/status/notification-battery-100.svg "Battery full"
+      notify-send "Battery Charged" "Battery is 80% charged." -i "battery-charging-custom" -r 9991
       last="FULL"
     fi
 
     # If low and discharging
     if [ "$last" != "LOW" ] && [ "$status" = "Discharging" ] && \
        [ $capacity -le $low ]; then
-      notify-send -i  /usr/share/icons/Arc/status/symbolic/battery-caution-symbolic.svg "Battery low: $capacity%"
+      notify-send "Low Battery" "${capacity}% of battery remaining." -u critical -i "battery-alert-custom" -r 9991
       last=LOW
     fi
 
     # If critical and discharging
     if [ "$status" = "Discharging" ] && [ $capacity -le $critical ]; then
-      notify-send -u critical -i /usr/share/icons/Adwaita/scalable/status/battery-level-0-symbolic.svg "Battery very low: $capacity%"
+      notify-send "Low Battery" "${capacity}% of battery remaining." -u critical -i "battery-alert-custom" -r 9991
       last=CRITICAL
     fi
   fi

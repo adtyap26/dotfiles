@@ -9,7 +9,7 @@ fi
 # Prompt the user for the video file name
 
 echo -e "Enter the name of the video file: " 
-video_file=$(gum filter --fuzzy --prompt="Select JSON file: " --prompt.foreground="4" --match.foreground="1")
+video_file=$(gum filter --fuzzy --prompt="Select video file: " --prompt.foreground="4" --match.foreground="1")
 echo "You have selected: $video_file"
 
 sleep 1 

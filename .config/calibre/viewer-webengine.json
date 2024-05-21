@@ -1,0 +1,94 @@
+{
+  "geometry-of-main_window_geometry": {
+    "frame_geometry": {
+      "height": 1025,
+      "width": 930,
+      "x": 975,
+      "y": 40
+    },
+    "full_screened": false,
+    "geometry": {
+      "height": 1013,
+      "width": 918,
+      "x": 981,
+      "y": 46
+    },
+    "maximized": false,
+    "normal_geometry": {
+      "height": 1013,
+      "width": 918,
+      "x": 981,
+      "y": 46
+    },
+    "qt": {
+      "__class__": "bytearray",
+      "__value__": "AdnQywADAAAAAAPPAAAAKAAAB3AAAAQoAAAD1QAAAC4AAAdqAAAEIgAAAAAAAAAAB4AAAAPVAAAALgAAB2oAAAQi"
+    },
+    "screen": {
+      "depth": 24,
+      "device_pixel_ratio": 1.0,
+      "geometry_in_logical_pixels": {
+        "height": 1080,
+        "width": 1920,
+        "x": 0,
+        "y": 0
+      },
+      "index_in_screens_list": 0,
+      "manufacturer": "",
+      "model": "",
+      "name": "HDMI-2",
+      "serial": "",
+      "size_in_logical_pixels": {
+        "height": 1080,
+        "width": 1920
+      },
+      "virtual_geometry": {
+        "height": 1080,
+        "width": 1920,
+        "x": 0,
+        "y": 0
+      }
+    }
+  },
+  "main_window_state": {
+    "__class__": "bytearray",
+    "__value__": "AAAA/wAAAAH9AAAAAgAAAAAAAAAAAAAAAPwCAAAAAvsAAAAQAHQAbwBjAC0AZABvAGMAawAAAAAA/////wAAAIkA////+wAAABYAcwBlAGEAcgBjAGgALQBkAG8AYwBrAAAAAAD/////AAAAmQD///8AAAABAAAAAAAAAAD8AgAAAAT7AAAAFgBsAG8AbwBrAHUAcAAtAGQAbwBjAGsAAAAAAP////8AAACDAP////sAAAAcAGIAbwBvAGsAbQBhAHIAawBzAC0AZABvAGMAawAAAAAA/////wAAAPEA////+wAAABwAaQBuAHMAcABlAGMAdABvAHIALQBkAG8AYwBrAAAAAAD/////AAAAEwD////7AAAAHgBoAGkAZwBoAGwAaQBnAGgAdABzAC0AZABvAGMAawAAAAAA/////wAAANEA////AAADlgAAA/UAAAAEAAAABAAAAAgAAAAI/AAAAAEAAAAAAAAAAQAAAB4AYQBjAHQAaQBvAG4AcwBfAHQAbwBvAGwAYgBhAHICAAAAAP////8AAAAAAAAAAA=="
+  },
+  "old_prefs_migrated": true,
+  "session_data": {
+    "controls_help_shown_count": 2,
+    "standalone_font_settings": {},
+    "standalone_misc_settings": {
+      "remember_last_read": true,
+      "remember_window_geometry": false,
+      "save_annotations_in_ebook": true,
+      "singleinstance": false
+    },
+    "standalone_recently_opened": [
+      {
+        "key": "/home/permaditya/Database/libs/Unknown/Learning the bash Shell,3rd Edition (82)/Learning the bash Shell,3rd Edition - Unknown.pdf",
+        "pathtoebook": "/home/permaditya/Database/libs/Unknown/Learning the bash Shell,3rd Edition (82)/Learning the bash Shell,3rd Edition - Unknown.pdf",
+        "timestamp": "2024-05-05T10:28:02.418Z",
+        "title": "Learning the bash Shell,3rd Edition"
+      },
+      {
+        "key": "/home/permaditya/Database/library/Unknown/mastering-vim-quickly-v11nbsped compress (27)/mastering-vim-quickly-v11nbsped compress - Unknown.pdf",
+        "pathtoebook": "/home/permaditya/Database/library/Unknown/mastering-vim-quickly-v11nbsped compress (27)/mastering-vim-quickly-v11nbsped compress - Unknown.pdf",
+        "timestamp": "2023-09-14T04:47:10.768Z",
+        "title": "mastering-vim-quickly-v11nbsped compress"
+      },
+      {
+        "key": "/home/permaditya/Downloads/Telegram_Desktop/nginx.conf mti-vdi-project.txt",
+        "pathtoebook": "/home/permaditya/Downloads/Telegram_Desktop/nginx.conf mti-vdi-project.txt",
+        "timestamp": "2023-09-13T04:33:34.271Z",
+        "title": "nginx.conf mti-vdi-project"
+      },
+      {
+        "key": "/home/permaditya/Database/library/Unknown/Advanced Bash-Scripting Guide (16)/Advanced Bash-Scripting Guide - Unknown.pdf",
+        "pathtoebook": "/home/permaditya/Database/library/Unknown/Advanced Bash-Scripting Guide (16)/Advanced Bash-Scripting Guide - Unknown.pdf",
+        "timestamp": "2023-08-14T07:59:55.834Z",
+        "title": "Advanced Bash-Scripting Guide"
+      }
+    ]
+  }
+}

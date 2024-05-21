@@ -1,0 +1,79 @@
+{
+  "entries": {
+    "pdf": [
+      {
+        "Categories": "Office;Viewer;",
+        "Comment": "A minimalistic document viewer",
+        "Exec": [
+          "zathura",
+          "%U"
+        ],
+        "MimeType": [
+          "",
+          "application/x-fictionbook",
+          "application/oxps",
+          "application/epub+zip",
+          "application/pdf"
+        ],
+        "Name": "Zathura",
+        "NoDisplay": "true",
+        "Terminal": "false",
+        "Type": "Application",
+        "Version": "1.0",
+        "desktop_file_path": "/usr/share/applications/org.pwmt.zathura-pdf-mupdf.desktop",
+        "uuid": "94b4d1f1-60c7-4f8c-9958-e28a3892783c"
+      }
+    ]
+  },
+  "geometry-of-choose-open-with-program-dialog-geometry": {
+    "frame_geometry": {
+      "height": 512,
+      "width": 612,
+      "x": 654,
+      "y": 284
+    },
+    "full_screened": false,
+    "geometry": {
+      "height": 500,
+      "width": 600,
+      "x": 660,
+      "y": 290
+    },
+    "maximized": false,
+    "normal_geometry": {
+      "height": 500,
+      "width": 600,
+      "x": 660,
+      "y": 290
+    },
+    "qt": {
+      "__class__": "bytearray",
+      "__value__": "AdnQywADAAAAAAKOAAABHAAABPEAAAMbAAAClAAAASIAAATrAAADFQAAAAAAAAAAB4AAAAKUAAABIgAABOsAAAMV"
+    },
+    "screen": {
+      "depth": 24,
+      "device_pixel_ratio": 1.0,
+      "geometry_in_logical_pixels": {
+        "height": 1080,
+        "width": 1920,
+        "x": 0,
+        "y": 0
+      },
+      "index_in_screens_list": 0,
+      "manufacturer": "",
+      "model": "",
+      "name": "eDP-1",
+      "serial": "",
+      "size_in_logical_pixels": {
+        "height": 1080,
+        "width": 1920
+      },
+      "virtual_geometry": {
+        "height": 1080,
+        "width": 1920,
+        "x": 0,
+        "y": 0
+      }
+    }
+  }
+}

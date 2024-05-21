@@ -1,9 +1,9 @@
 #!/bin/bash
 
-function run_st() {
-    local st_command="st -e bash -c"
+function run_terminal() {
+    local term_command="alacritty -e bash -c"
     local command="$1"
-    $st_command "$command"
+    $term_command "$command"
 }
 
 function ask_restore_session() {
@@ -18,14 +18,14 @@ function ask_restore_session() {
 function list_sessions() {
     local selected_session=$(tmux list-sessions | rofi -dmenu -p "Tmux Sessions:" | awk '{print $1}')
     if [ -n "$selected_session" ]; then
-        run_st "tmux attach-session -t $selected_session"
+        run_terminal "tmux attach-session -t $selected_session"
     fi
 }
 
 function create_session() {
     local session_name=$(rofi -dmenu -p "Enter a name for the new session:")
     if [ -n "$session_name" ]; then
-        run_st "tmux new-session -d -s $session_name && tmux attach-session -t $session_name"
+        run_terminal "tmux new-session -d -s $session_name && tmux attach-session -t $session_name"
     fi
 }
 

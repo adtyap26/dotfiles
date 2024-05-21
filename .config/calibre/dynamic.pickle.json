@@ -1,0 +1,38 @@
+{
+  "add books dialog dir": "/home/permaditya/Database/library",
+  "add books dialog dir-last-used-filter-spec-all-files": false,
+  "choose library location": "/home/permaditya/Database/libs",
+  "database location dialog": "/home/permaditya/Database/library",
+  "notified-version-updates": {
+    "__class__": "set",
+    "__value__": [
+      "7.10",
+      "6.26"
+    ]
+  },
+  "recursive book import root dir dialog": "/home/permaditya/Database/library",
+  "sort_history": [
+    [
+      "tags",
+      true
+    ],
+    [
+      "title",
+      true
+    ],
+    [
+      "timestamp",
+      false
+    ],
+    [
+      "timestamp",
+      false
+    ],
+    [
+      "timestamp",
+      false
+    ]
+  ],
+  "welcome_wizard_device": "smartphone",
+  "welcome_wizard_was_run": true
+}

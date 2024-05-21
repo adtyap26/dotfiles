@@ -7,13 +7,13 @@ if pidof ffmpeg
   then
     killall ffmpeg
 
-    notify-send 'Stopped Recording!' --icon=dialog-information
+    notify-send -i ~/Apps/Tokyo-Night-GTK-Theme/icons/Tokyonight-Dark/actions/22/kdenlive-hide-video.svg 'Stopped Recording!' 
   else 
     slop=$(slop -f "%x %y %w %h")
 
     read -r X Y W H < <(echo $slop)
 
-    time=$(date +%F%T)
+    time=$(date "+%F_%H-%M-%S")
 
 
     # only start recording if we give a width (e.g we press escape to get out of slop - don't record)
@@ -21,8 +21,7 @@ if pidof ffmpeg
 
     if [ $width -gt 0 ];
      then
-      notify-send 'Started Recording!' --icon=dialog-information
-      
+      notify-send -i ~/Apps/Tokyo-Night-GTK-Theme/icons/Tokyonight-Dark/actions/22/kdenlive-show-video.svg 'Started Recording!'       
       # records without audio input
       # for audio add "-f alsa -i pulse" to the line below (at the end before \, without "")
 

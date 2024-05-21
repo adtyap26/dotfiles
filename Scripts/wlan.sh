@@ -7,7 +7,7 @@ if [ "$CONNAME" = "" ]; then
 fi
 
 # get the interface to use for network speed
-interface="wlp1s0"
+interface="wlp61s0"
 
 while true
 do
@@ -28,7 +28,7 @@ do
 
     # output the connection name and transfer rates
     if [ "$CONNAME" = "" ]; then
-        printf "  No Connection  :$RKBPS  :$TKBPS kB/s\n" 
+        printf "󰜑 No Connection  :$RKBPS  :$TKBPS kB/s\n" 
     else
         (( ${#CONNAME} > 5 )) && CONNAME="${CONNAME:0:5}..."
         printf "  $CONNAME   :$RKBPS  :$TKBPS Kb/s\n"
