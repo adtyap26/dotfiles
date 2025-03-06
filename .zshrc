@@ -6,22 +6,53 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 ###
-# If you come from bash you might have to change your $PATH.
-export PATH=$HOME/.bin:~/.local/bin:/usr/local/bin:~/Scripts/:~/Scripts/musikcube_linux_x86_64_0.99.5/:/usr/bin:/bin:/usr/local/sbin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin:$HOME/.cargo/bin:/usr/local/texlive/2022/bin/x86_64-linux:$NPM_PACKAGES/bin:$GOBIN:$HOME/.docker:$PATH
-export _JAVA_AWT_WM_NONREPARENTING=1
+# Define variables for paths
 export NPM_PACKAGES=$HOME/.npm-packages
-export NODE_PATH=$NPM_PACKAGES/lib/node_modules:$NODE_PATH
 export GOPATH=$HOME/Documents/Adit/Learning/COding/Golang/
 export GOBIN=$GOPATH/go/bin
+export ANDROID_HOME='/opt/android-sdk'
+export PATH=$PATH:$ANDROID_HOME/platform-tools/
+export PATH=$PATH:$ANDROID_HOME/tools/bin/
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools/
 
-#export GO
-export PATH=$PATH:$GOPATH/go/bin
-# export GOROOT=$GOPATH/go/bin
+## Confluent 
+export CONFLUENT_HOME=/home/permaditya/Apps/confluent-platform/confluent/
+export JAVA_HOME=/home/permaditya/.sdkman/candidates/java/17.0.9-oracle/
 
-MANPATH=/usr/local/texlive/2022/texmf-dist/doc/man:$MANPATH; export MANPATH
-INFOPATH=/usr/local/texlive/2022/texmf-dist/doc/info:$INFOPATH; export INFOPATH
+#Set the PATH variable with organized paths
+# export PATH=$HOME/.bin:~/.local/bin:/usr/local/bin:~/Scripts/:~/Scripts/musikcube_linux_x86_64_0.99.5/:/usr/bin:/bin:/usr/local/sbin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin:$HOME/.cargo/bin:/usr/local/texlive/2022/bin/x86_64-linux:$NPM_PACKAGES/bin:$GOBIN:$HOME/.docker
+export PATH=\
+$CONFLUENT_HOME/bin:\
+$JAVA_HOME/bin:\
+$HOME/.bin:\
+$ANDROID_HOME/cmdline-tools/latest/bin:/\
+~/.local/bin:\
+/usr/local/bin:\
+~/Scripts/:\
+~/Scripts/musikcube_linux_x86_64_0.99.5/:\
+/usr/bin:\
+/bin:\
+/usr/local/sbin:\
+/usr/bin/site_perl:\
+/usr/bin/vendor_perl:\
+/usr/bin/core_perl:\
+/var/lib/snapd/snap/bin:\
+$HOME/.cargo/bin:\
+/usr/local/texlive/2022/bin/x86_64-linux:\
+$NPM_PACKAGES/bin:\
+$GOBIN:\
+$HOME/.docker
 
-# Path to your oh-my-zsh installation.
+# Other environment variables
+export _JAVA_AWT_WM_NONREPARENTING=1
+export NODE_PATH=$NPM_PACKAGES/lib/node_modules:$NODE_PATH
+export ZELLIJ_CONFIG_DIR=/home/permaditya/.config/zellij
+
+
+# # Add Go bin directory to the PATH
+# export PATH=$PATH:$GOBIN
+# # Path to your oh-my-zsh installation.
 #installation via script from github
 #export ZSH="/home/$USER/.oh-my-zsh"
 #installation via paru -S oh-my-zsh-git
@@ -138,7 +169,6 @@ export MANPAGER="sh -c 'col -bx | bat -plman'"
 #export MANPAGER="nvim -c 'set ft=man' -"
 
 
-
 if [ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
   source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
@@ -187,7 +217,8 @@ alias mr='himalaya read'
 alias mrep='himalaya reply'
 alias msy='himalaya account sync'
 
-
+#git config for managing dotfiles
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 # vimdiff
 
@@ -211,17 +242,19 @@ alias za='zathura'
 
 # Changing cat to bat
 
-alias cat='bat' 
+#alias cat='bat' 
 
 # GO to main project
 alias js='cd /home/permaditya/Documents/Adit/Learning/COding/Javascript/'
+alias learnc='cd /home/permaditya/Documents/Adit/Learning/COding/C/'
 alias golang='cd /home/permaditya/Documents/Adit/Learning/COding/Golang/'
+alias flutt='cd /home/permaditya/Documents/Adit/Learning/COding/flutter/'
 alias nod='cd /home/permaditya/Documents/Adit/Learning/COding/Javascript/nodejs/'
 alias devop='cd /home/permaditya/Documents/Adit/Learning/DevOps/'
 alias remang='cd /home/permaditya/Downloads/manga'
 alias compro='cd /home/permaditya/Public/company-profile/rwi/hugo/'
 alias compros='cd /home/permaditya/Public/company-profile/sci/sintaksis.agency/'
-
+alias web='cd /home/permaditya/Public/personal-web/personal/'
 alias psp='cd /home/permaditya/Documents/Adit/Project/PSP/'
 
 #Go to usb
@@ -248,9 +281,11 @@ alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
-
+## ssh part 
 ## ssh for unknow terminal
 alias ssh='TERM=xterm-256color ssh'
+alias ssha='eval $(ssh-agent) && ssh-add'
+
 
 #readable output
 alias df='df -h'
@@ -585,7 +620,21 @@ alias record='screen-recorder.sh'
 sc() { du -a ~/Scripts/* ~/.config/* | awk '{print $2}' | fzf --prompt="Select the file: " --height=30 --border --border-label="╢ Edit-File ╟" --color=label:italic:white --color bg:#111111,preview-bg:#111111  --preview 'cat {}'\
   | xargs -r $EDITOR ;}
 
+nt() { du -a ~/Database/note/* | awk '{print $2}' | fzf --prompt="Select the file: " --height=30 --border --border-label="╢ Note-Viewer ╟" --color=label:italic:white --color bg:#111111,preview-bg:#111111  --preview 'cat {}'\
+  | xargs -r $EDITOR ;}
 
+wk() { du -a ~/Database/working_note/* | awk '{print $2}' | fzf --prompt="Select the file: " --height=30 --border --border-label="╢ Note-Viewer ╟" --color=label:italic:white --color bg:#111111,preview-bg:#111111  --preview 'cat {}'\
+  | xargs -r $EDITOR ;}
+
+# yazi
+function yy() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
 ### DUNTS
 
 run_dunst() {
@@ -629,3 +678,7 @@ export NVM_DIR="$HOME/.nvm"
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

@@ -1,0 +1,23 @@
+# font
+font-family = JetBrainsMono
+font-style = Regular
+font-size = 13
+font-thicken = true
+
+# cursor-style
+cursor-style = block
+confirm-close-surface = false
+clipboard-paste-protection = false
+
+#color
+theme = /usr/share/ghostty/themes/Builtin Solarized Dark
+#background-opacity = 0.95
+
+# keybind
+keybind = ctrl+shift+enter=toggle_quick_terminal
+keybind = ctrl+shift+r=reload_config
+
+
+# window
+window-decoration = false
+gtk-titlebar = true
