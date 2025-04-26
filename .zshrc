@@ -246,7 +246,6 @@ alias za='zathura'
 
 # GO to main project
 alias js='cd /home/permaditya/Documents/Adit/Learning/COding/Javascript/'
-alias learnc='cd /home/permaditya/Documents/Adit/Learning/COding/C/'
 alias golang='cd /home/permaditya/Documents/Adit/Learning/COding/Golang/'
 alias flutt='cd /home/permaditya/Documents/Adit/Learning/COding/flutter/'
 alias nod='cd /home/permaditya/Documents/Adit/Learning/COding/Javascript/nodejs/'
@@ -617,14 +616,32 @@ alias record='screen-recorder.sh'
 
 
 # personal function for search
-sc() { du -a ~/Scripts/* ~/.config/* | awk '{print $2}' | fzf --prompt="Select the file: " --height=30 --border --border-label="╢ Edit-File ╟" --color=label:italic:white --color bg:#111111,preview-bg:#111111  --preview 'cat {}'\
+sc() { du -a ~/Scripts/* ~/.config/* | awk '{print $2}' | fzf --prompt="Select the file: " --height=30 --border --border-label="╢ Edit-File ╟" --color=label:italic:white --color bg:#073642,preview-bg:#073642  --preview 'cat {}'\
   | xargs -r $EDITOR ;}
 
-nt() { du -a ~/Database/note/* | awk '{print $2}' | fzf --prompt="Select the file: " --height=30 --border --border-label="╢ Note-Viewer ╟" --color=label:italic:white --color bg:#111111,preview-bg:#111111  --preview 'cat {}'\
+nt() { du -a ~/Database/note/* | awk '{print $2}' | fzf --prompt="Select the file: " --height=30 --border --border-label="╢ Note-Viewer ╟" --color=label:italic:white --color bg:#073642,preview-bg:#073642  --preview 'cat {}'\
   | xargs -r $EDITOR ;}
 
-wk() { du -a ~/Database/working_note/* | awk '{print $2}' | fzf --prompt="Select the file: " --height=30 --border --border-label="╢ Note-Viewer ╟" --color=label:italic:white --color bg:#111111,preview-bg:#111111  --preview 'cat {}'\
+wk() { du -a ~/Database/working_note/* | awk '{print $2}' | fzf --prompt="Select the file: " --height=30 --border --border-label="╢ Note-Viewer ╟" --color=label:italic:white --color bg:#073642,preview-bg:#073642  --preview 'cat {}'\
   | xargs -r $EDITOR ;}
+
+learnc() {
+    local selected_dir
+    selected_dir=$(find ~/Documents/Adit/Learning/COding/C -type d | fzf \
+        --prompt="Select the directory: " \
+        --height=30 \
+        --border \
+        --border-label="╢ C-Learning ╟" \
+        --color=label:italic:white \
+        --color=bg:#073642,preview-bg:#073642 \
+        --preview 'ls -la {}')
+    if [ -n "$selected_dir" ]; then
+        cd "$selected_dir" || { echo "Failed to cd into $selected_dir"; return 1; }
+        echo "Changed directory to $selected_dir"
+    else
+        echo "No directory selected. Staying put."
+    fi
+}
 
 # yazi
 function yy() {
